@@ -1,7 +1,7 @@
 all: attacks.geojson
 
 clean:
-	rm -r raw
+	rm -r raw/*.csv
 
 raw/google_sheet.csv:
 	mkdir -p $(dir $@)

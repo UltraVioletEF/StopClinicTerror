@@ -1,9 +1,9 @@
 # StopClinicTerror.org
 =====
 
-A visualization of terrorist attacks on womens health clinics in the US.
+A visualization of terrorist attacks on womens health clinics in the US from 1995-2015.
 
-* Sourced from [Wikipedia](https://en.wikipedia.org/wiki/Anti-abortion_violence#Murders), [National Abortion Federation](http://prochoice.org/education-and-advocacy/violence/violence-statistics-and-history/), [NYTimes](http://www.nytimes.com/interactive/2015/11/29/us/30abortion-clinic-violence.html), [DailyDot](http://www.dailydot.com/politics/history-anti-abortion-terrorism-violence-united-states/), et al.
+* Sourced from [Wikipedia](https://en.wikipedia.org/wiki/Anti-abortion_violence#Murders), [National Abortion Federation](http://prochoice.org/education-and-advocacy/violence/violence-statistics-and-history/), [NYTimes](http://www.nytimes.com/interactive/2015/11/29/us/30abortion-clinic-violence.html), [DailyDot](http://www.dailydot.com/politics/history-anti-abortion-terrorism-violence-united-states/), [@ClinicEscort](https://storify.com/ClinicEscort/is100enough-how-many) via [Vox](http://www.vox.com/2015/12/1/9827886/abortion-clinic-attacks-mapped), et al.
 * Map design &copy; 2015 [UltraViolet](http://weareultraviolet.org)
 
 ### Data

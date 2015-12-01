@@ -44,16 +44,22 @@ def geojson(item):
     return feature
 
 
-if __name__ == '__main__':
+def main():
+    # converts CSV to geoJSON
+    # looking up coordinates for location
+
     items = []
     with open('raw/google_sheet.csv', 'r') as sheet:
         for row in csv.DictReader(sheet):
             items.append(geojson(row))
 
-    geojson = {
+    collection = {
         "type": "FeatureCollection",
         "features": items
     }
 
     with open("attacks.geojson", 'w') as json_file:
-        json_file.write(json.dumps(geojson, indent=4))
+        json_file.write(json.dumps(collection, indent=4))
+
+if __name__ == '__main__':
+    main()
