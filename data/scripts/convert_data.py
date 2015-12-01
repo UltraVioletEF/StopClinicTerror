@@ -1,5 +1,5 @@
 import requests, os, csv, json
-MAPZEN_KEY = os.environ.get('MAPZEN_KEY')
+MAPZEN_KEY = os.environ['MAPZEN_KEY']
 
 
 def geocode(query):
@@ -7,8 +7,7 @@ def geocode(query):
     payload = {
         'api_key': MAPZEN_KEY,
         'text': query,
-        'boundary.country': 'USA',  # bias search response to USA
-        'layer': 'locality',  # limit to cities
+        'layer': 'coarse',
         'size': 1  # just one, please
     }
     r = requests.get('https://search.mapzen.com/v1/search', params=payload)
@@ -16,26 +15,32 @@ def geocode(query):
         match = r.json()['features'][0]
         return match['geometry'].get('coordinates')
     except (ValueError, IndexError):
-            return False
+        return False
 
 
 def geojson(item):
+    location = item.get('state')
+    if item.get('city') and item.get('state'):
+        location = '%s, %s' % (item['city'], item['state'])
+    coordinates = geocode(location)
+
     feature = {
         "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": geocode('%s, %s' % (item['city'], item['state']))
-        },
         "properties": {
             "date": item.get('date'),
             "city": item.get('city'),
             "state": item.get('state'),
-            "killed": int(item.get('killed', 0)),
-            "injured": int(item.get('inured', 0)),
+            "killed": item.get('killed', 0),
+            "injured": item.get('inured', 0),
             "type": item.get('type'),
             "description": item.get('description')
         }
     }
+    if coordinates:
+        feature['geometry'] = {
+            "type": "Point",
+            "coordinates": coordinates
+        }
     return feature
 
 
@@ -43,13 +48,12 @@ if __name__ == '__main__':
     items = []
     with open('raw/google_sheet.csv', 'r') as sheet:
         for row in csv.DictReader(sheet):
-            if row.get('city') and row.get('state'):
-                items.append(geojson(row))
+            items.append(geojson(row))
 
     geojson = {
         "type": "FeatureCollection",
         "features": items
     }
 
-    with open("attack.geojson", 'w') as json_file:
+    with open("attacks.geojson", 'w') as json_file:
         json_file.write(json.dumps(geojson, indent=4))
