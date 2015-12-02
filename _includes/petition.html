@@ -1,32 +1,38 @@
-<form class="ak-form" name="act" method="POST" action="https://act.weareultraviolet.org/act/" accept-charset="utf-8" style="display: block;">
-  <input type="hidden" name="utf8" value="✔">
+<script src="http://act.weareultraviolet.org/resources/actionkit.js"></script>
 
-  <ul class="compact" id="ak-errors"></ul>
-  <div id="unknown_user">
-  	<div class="required" id="id_name_box">
-  		<label for="id_name" class="label-name">Name<span class="ak-required-flag">*</span></label>
-  		<input type="text" name="name" id="id_name" class="ak-userfield-input">
-  	</div>
-         	
-  	<div class="required" id="id_email_box">
-  		<label for="id_email" class="label-email">E-mail address<span class="ak-required-flag">*</span></label>
-  		<input type="text" name="email" id="id_email" class="ak-userfield-input">
-  	</div>
-         
-   	<div class="required" id="id_zip_box">
-  		<label for="id_zip" class="label-zip">ZIP Code<span class="ak-required-flag">*</span></label>
-  		<input type="text" name="zip" id="id_zip" class="ak-userfield-input">
-  	</div>
-         
-  	<div class="" id="id_postal_box" style="display: none;">
-  		<label for="id_postal" class="label-postal">Postal code</label>
-  		<input type="text" name="postal" id="id_postal" class="ak-userfield-input" disabled="disabled">
-  	</div>
-         
-		<div class="" id="id_country_box">
-			<label for="id_country">Country</label>
-      <select name="country" id="country">
-        <option selected="" value="">---</option>
+<form class="ak-form" name="act" method="POST" action="http://act.weareultraviolet.org/act/" accept-charset="utf-8">
+    <input type="hidden" name="utf8" value="&#x2714;">
+    <aside class="action-progress">
+        <!-- Ultraviolet/progress_meter.html -->
+    </aside>
+    
+    <ul class="compact" id="ak-errors"></ul>
+        <div id="unknown_user">
+
+    <div class="required" id="id_name_box">
+        <label for="id_name" class="label-name">Name<span class="ak-required-flag">*</span></label>
+        <input type="text" name="name" id="id_name" class="ak-userfield-input">
+    </div>
+
+    <div class="required" id="id_email_box">
+        <label for="id_email" class="label-email">E-mail address<span class="ak-required-flag">*</span></label>
+        <input type="text" name="email" id="id_email" class="ak-userfield-input">
+    </div>
+    
+    <div class="required" id="id_zip_box">
+        <label for="id_zip" class="label-zip">ZIP Code<span class="ak-required-flag">*</span></label>
+        <input type="text" name="zip" id="id_zip" class="ak-userfield-input">
+    </div>
+    
+    <div class="" id="id_postal_box">
+        <label for="id_postal" class="label-postal">Postal code</label>
+        <input type="text" name="postal" id="id_postal" class="ak-userfield-input">
+    </div>
+  
+    <div class="" id="id_country_box">
+        <label for="id_country">Country</label>
+    <select name="country" id="country" >
+        <option selected value="">---</option>
         <option value="Afghanistan">Afghanistan</option>
         <option value="Aland Islands">Aland Islands</option>
         <option value="Albania">Albania</option>
@@ -214,7 +220,7 @@
         <option value="Romania">Romania</option>
         <option value="Russia">Russia</option>
         <option value="Rwanda">Rwanda</option>
-        <option value="Saint Barthélemy">Saint Barthélemy</option>
+        <option value="Saint Barth&#233;lemy">Saint Barth&#233;lemy</option>
         <option value="Saint Helena">Saint Helena</option>
         <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
         <option value="Saint Lucia">Saint Lucia</option>
@@ -278,37 +284,31 @@
         <option value="Yemen">Yemen</option>
         <option value="Zambia">Zambia</option>
         <option value="Zimbabwe">Zimbabwe</option>
-      </select>
-		</div>
-  
-    <input type="hidden" name="auto_country" value="1">
-  </div>
+    </select>
+    </div>
 
-  <div id="known_user" style="display: none;">
-    Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.forms.logOut()">Click here.</a>
-  </div>
+  <input type="hidden" name="auto_country" value="1">
+  <style type="text/css">
+    /* Ensure that, if there's no JavaScript, the global-friendly fields show
+     * rather than the US-only ones */
+   /* #id_zip_box, #id_state_box { display: none; } */
+  </style>
 
-  <div class="comments ">
-      <label for="id_comment">Comment:</label>
-      <textarea id="id_comment" name="action_comment"></textarea>
-  </div>
+    </div>
+    <div id="known_user">
+        Not <span id="known_user_name"></span>?  <a href="?" onclick="return actionkit.forms.logOut()">Click here.</a>
+    </div>
 
-  <input type="hidden" name="page" value="ppterroristattacks">
-  <div class="form_actions">
-    <input type="submit" value="Sign the petition">
-  </div>
+    <div class="comments ">
+        <label for="id_comment">Comment:</label>
+        <textarea id="id_comment" name="action_comment"></textarea>
+    </div>
 
-  <div class="form_actions"><p class="disclaimer">
-    You will receive periodic updates about UltraViolet and related campaigns.
-    You may unsubscribe at any time. Here's our <a href="http://weareultraviolet.org/privacy/" target="_blank">privacy policy</a>.</p>
-  </div>
-
-  <input type="hidden" name="lists" value="1">
-  <input type="hidden" name="source" value="stopclinicterror">
-  <input type="hidden" name="form_name" value="act">
-  <input type="hidden" name="url" value="http://stopclinicterror.org/">
-  <input type="hidden" name="js" value="1">
-
-  <input type="hidden" name="required" value="name">
-  <input type="hidden" name="required" value="zip">
+    <input type="hidden" name="page" value="ppterroristattacks">
+    <div class="form_actions">
+        <input type="submit" value="Sign">
+    </div>
+    <div class="form_actions"><p class="disclaimer">You will receive periodic updates about UltraViolet and related campaigns. You may unsubscribe at any time. Here's our <a href="http://weareultraviolet.org/privacy" target="_blank">privacy policy</a>.</p>
+    </div>
+    <input type="hidden" name="lists" value="1" />
 </form>
