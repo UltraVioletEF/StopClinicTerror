@@ -1,5 +1,4 @@
 # StopClinicTerror.org
-=====
 
 A visualization of terrorist attacks on womens health clinics in the US from 1995-2015.
 
@@ -20,4 +19,6 @@ npm install
 grunt
 ```
 
-Deploy by committed to the gh-pages branch.
+Open a browser to localhost:4000 and it will reflect changes made to html, style or script files automatically.
+
+Deploy by committing to the gh-pages branch.

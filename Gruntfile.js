@@ -1,3 +1,12 @@
+var LIVERELOAD_PORT = 35729;
+var SERVER_PORT = 4000;
+var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
+var serveStatic = require('serve-static');
+var mountFolder = function (connect, dir) {
+    return serveStatic(require('path').resolve(dir));
+};
+
+
 module.exports = function (grunt) {
     grunt.initConfig({
         shell: {
@@ -6,10 +15,18 @@ module.exports = function (grunt) {
             }
         },
         connect: {
-            server: {
+            options: {
+                port: grunt.option('port') || SERVER_PORT,
+                hostname: 'localhost',
+            },
+            livereload: {
                 options: {
-                    port: 4000,
-                    base: '_site'
+                    middleware: function (connect) {
+                        return [
+                            lrSnippet,
+                            mountFolder(connect, '_site')
+                        ];
+                    }
                 }
             }
         },
@@ -24,7 +41,7 @@ module.exports = function (grunt) {
             ],
             tasks: ['shell:jekyllBuild'],
             options: {
-              livereload: true
+                livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
             },
           },
         }
