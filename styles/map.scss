@@ -6,7 +6,7 @@
     }
 
 	.border {
-		fill: $white;
+		fill: $purple;
 		stroke: $black;
 		stroke-linecap: round;
 		stroke-linejoin: round;
@@ -24,8 +24,41 @@
 			}
 
 			&:not(.hidden):hover {
-				fill: $purple;
+				fill: $white;
 			}
 		}
+	}
+}
+
+#controls {
+	button {
+		background: $teal;
+		color: $white;
+		border: 0;
+		border-radius: 0;
+	}
+}
+
+#data {
+	margin-left: 0;
+	min-height: 200px;
+
+	div.location {
+		display: inline-block;
+		transform: rotate(-3deg);
+		font-family: $font-family-header;
+		font-size: 2em;
+	}
+
+	div.date {
+		display: inline-block;
+		float: right;
+		font-size: 1.1em;
+		margin-top: 5px;
+	}
+
+	p {
+		text-align: justify;
+		line-height: 1.2;
 	}
 }

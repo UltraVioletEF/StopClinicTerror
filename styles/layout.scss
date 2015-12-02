@@ -1,5 +1,9 @@
 @import "variables.scss";
 
+html {
+	padding: 40px 0;
+}
+
 body {
 	background: $black;
 	color: $font-color;
@@ -10,17 +14,19 @@ h1, h2, h3, button {
 	font-family: $font-family-header;
 }
 
+.logo h1 {
+	img { width: 100%; }
+}
 
-header h1 {
-	a {
-		color: $white;
-		&:hover { color: $black; }
-	}
-	span {
-		background: $purple;
-		padding: 5px 10px;
-		margin-right: 15px;
-	}
+h2#totalData {
+	transform: rotate(-3deg);
+	font-size: 3.2rem;
+	text-align: right;
+}
+
+section#content.u-pull-right {
+	float: right;
+	margin-left: 0;
 }
 
 a {
@@ -29,12 +35,13 @@ a {
   &:hover { color: $link-hover-color; }
 }
 
-section#content.u-pull-right {
-	float: right;
-}
 
 footer {
-	.logo {
-		background: url('../images/uv-logo.png');
+	clear: left;
+	a.one-half {
+		display: block;
+		width: 50%;
+		margin: 0 auto;
 	}
 }
+

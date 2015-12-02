@@ -7,7 +7,7 @@ var map = (function () {
         dataEvent = _.template($('script#dataEvent').html());
         dataTotal = _.template($('script#dataTotal').html());
 
-        var width = 960,
+        var width = 768,
             height = 500;
         var self = this;
 
@@ -46,12 +46,11 @@ var map = (function () {
             if (error) return console.error(error);
             calculateTotal(attacks.features);
             drawCircles(attacks.features);
-            startAnimation();
+            startAnimation(attacks.features);
         });
     };
 
     var calculateTotal = function(data) {
-        console.log(data);
         var numAttacks = data.length;
         var numKilled = d3.sum(data, function(d) {
             return parseInt(d.properties.killed);
@@ -84,15 +83,43 @@ var map = (function () {
                 return "translate(" + map.path.centroid(d) + ")";
             })
             .attr("r", function(d) { return radius(d.properties.killed + d.properties.injured); })
-            .on('mouseover', updateData);
+            .on("mouseover", updateData);
+            //.classed("hidden", true);
     };
 
     var updateData = function(d) {
-        var text = dataTemplate(d.properties);
+        if (d.properties.city && d.properties.state) {
+            var state_abbr = states_hash[d.properties.state];
+            d.properties.location = d.properties.city;
+            if (state_abbr) {
+                d.properties.location += ', ' + state_abbr;
+            }
+        } else {
+            d.properties.location = d.properties.state;
+        }
+        var text = dataEvent(d.properties);
         $('#data').html(text);
     };
 
-    var startAnimation = function() {
+    var startAnimation = function(data) {
+        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
+        var years = [1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
+                    2009, 2010, 2011, 2012, 2013, 2014, 2015];
+
+        var grouped = d3.nest()
+            .key(function(d) { return parseInt((new Date(d.properties.date)).getUTCFullYear()); })
+            .key(function(d) { return parseInt((new Date(d.properties.date)).getUTCMonth()); })
+            .entries(data);
+
+        console.log(grouped);
+
+        for (var y in years) {
+            var year = years[y];
+            for (var m in months) {
+                //console.log(m);
+                //d3.selectAll()
+            }
+        }
 
     };
 

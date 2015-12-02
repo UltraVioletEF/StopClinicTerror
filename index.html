@@ -30,41 +30,52 @@
 </head>
 <html>
 <body class="container">
-  <header>
-    <div class="logo">
-      <h1><a href="http://www.stopclinicterror.org/"><span>Stop</span><span>Clinic</span><span>Terror</span></a></h1>
+  <header class="row">
+    <div class="logo six columns">
+      <h1><a href="http://www.stopclinicterror.org/"><img src="images/logo.svg" alt="Stop Clinic Terror"/></a></h1>
     </div> 
 
-    <h2 id="totalData"></h2>   
+    <h2 id="totalData" class="six columns"></h2>   
   </header>
 
-  <section id="content" class="nine columns u-pull-right">
+  <div class="row">
+  <section id="content" class="eight columns u-pull-right">
       
       <div id="map"></div>
-      <div id="controls">
-        
-      </div>
-      <div id="data">
-        
+      <div class="row">
+        <div id="controls" class="one-half column">
+          <button>Play</button>
+        </div>
+        <div id="data" class="one-half column"></div>
       </div>
   </section>
 
-  <section id="petition" class"three columns">
+  <section id="petition" class="four columns no-margin-left">
+    <h3>Tell the Department of Justice to Investigate Clinic Terrorists!</h3>
+    <p class="intro">Over the last two decades, anti-choice zealots have launched hundreds of violent attacks on Planned Parenthood clinics across the United States. These are acts of domestic terrorism and require the resources of a Department of Justice investigation.</p>
     {% include petition.html %}
   </section>
+  </div>
 
-  <footer class="three columns">
-    <div class=""><a href="">Data Sources</a></div>
-    <div class=""><a href="http://weareultraviolet.org/" class="logo">UltraViolet</a></div>
-    <div class=""><a href="http://weareultraviolet.org/privacy/">Privacy Policy</a></div>
+  <div class="row">
+  <footer class="four columns">
+    <div class="u-full-width">
+      <a href="http://weareultraviolet.org/" class="logo one-half">
+        <img src="images/uvlogo-white.svg" alt="UltraViolet">
+      </a>
+    </div>
+
+    <div class="u-pull-left small"><a href="">Data Sources</a></div>
+    <div class="u-pull-right small"><a href="http://weareultraviolet.org/privacy/">Privacy Policy</a></div>
   </footer>
+  </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.10/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="scripts/jquery.browser.js"></script>
-
+<script src="scripts/states.js"></script>
 <script src="scripts/map.js"></script>
 <script>
 $(document).ready(function() {
@@ -75,12 +86,12 @@ $(document).ready(function() {
 </script>
 
 <script type= "text/template" id="dataEvent">
-  <span><%= city %></span>
-  <p><%= date %>: <%= description %></p>
+  <div class="location"><%= location %></div><div class="date"><%= date %></div>
+  <p><%= description %></p>
 </script>
 
 <script type= "text/template" id="dataTotal">
-  Anti-choice terrorists have attacked womens health clinics <%= total %> times since 1995, killing <%= deaths %> people and injuring <%= injuries %> others.
+  Anti-choice terrorists have attacked <%= total %> clinics since 1995, killing <%= deaths %> people and injuring more than <%= injuries %> others.
 </script>
 
 <script>
