@@ -1,0 +1,34 @@
+@import "variables.scss";
+
+body {
+	background: $black;
+	color: $font-color;
+}
+
+header h1 {
+	a {
+		color: $white;
+		&:hover { color: $black; }
+	}
+	span {
+		background: $pink;
+		padding: 5px 10px;
+		margin-right: 15px;
+	}
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  &:hover { color: $link-hover-color; }
+}
+
+section#content.u-pull-right {
+	float: right;
+}
+
+footer {
+	.logo {
+		background: url('../images/uv-logo.png');
+	}
+}

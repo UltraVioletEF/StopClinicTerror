@@ -1,0 +1,5 @@
+exclude: [node_modules, Gruntfile.js, package.json]
+
+sass:
+    sass_dir: styles
+    style: compressed

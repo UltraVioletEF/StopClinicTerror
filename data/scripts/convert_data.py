@@ -58,7 +58,7 @@ def main():
         "features": items
     }
 
-    with open("attacks.geojson", 'w') as json_file:
+    with open("attacks.json", 'w') as json_file:
         json_file.write(json.dumps(collection, indent=4))
 
 if __name__ == '__main__':

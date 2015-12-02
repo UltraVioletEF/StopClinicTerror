@@ -1,1 +1,4 @@
 data/raw/google_sheet.csv
+.sass-cache
+_site
+node_modules

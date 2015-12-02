@@ -1,0 +1,24 @@
+#map {
+	rect.background {
+        fill: none;
+        pointer-events: all;
+        cursor:default;
+    }
+
+	.border {
+		fill: $white;
+		stroke: $black;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	.bubble {
+		fill: $pink;
+		stroke-width: 0px;
+		cursor: pointer;
+
+		circle:hover {
+			fill: $purple;
+		}
+	}
+}

@@ -13,3 +13,11 @@ To download and convert to geojson: `cd data && make`
 
 ### Timeline
 Uses [D3](http://d3js.org) to render a map and animate display over time.
+
+## Development
+```
+npm install
+grunt
+```
+
+Deploy by committed to the gh-pages branch.
