@@ -1,0 +1,21 @@
+form.ak-form {
+	label {
+		display: none;
+	}
+
+	input, select, textarea {
+		border-radius: 0;
+	}
+
+	#known_user {
+		display: none;
+	}
+
+	#id_postal_box, #id_country_box {
+		display: none;
+	}
+
+	p.disclaimer {
+		font-size: 12px;
+	}
+}
