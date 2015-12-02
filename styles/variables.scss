@@ -1,28 +1,29 @@
 // Colors
 $white: #fff;
 $teal: #66C2B9;
-$purple: #8357A0;
-$pink: #E11B7B;
-$black: #191919;
+$purple: #845DA3;
+$teal: #7FAFB6;
+$black: #323232;
 
 $primary-color: $white;
-$secondary-color: lighten($dark-grey, 13.5%) !default;
+$secondary-color: lighten($dark-grey, 13.5%);
 $border-color: #bbb !default;
-$link-color: $white !default;
-$link-hover-color: $pink;
+$link-color: $white;
+$link-hover-color: $teal;
 
 $font-color: $white;
 
 // Typography
-$font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family: 'Nunito', Helvetica, Arial, sans-serif;
+$font-family-header: 'Bebas Neue', Helvetica, Arial, sans-serif;
 
 //Grid Variables
-$container-width: 960px !default;
-$container-width-larger-than-mobile: 85% !default;
-$container-width-larger-than-phablet: 80% !default;
-$total-columns: 12 !default;
-$column-width: 100 / $total-columns !default; // calculates individual column width based off of # of columns
-$column-margin: 4% !default; // space between columns
+$container-width: 960px;
+$container-width-larger-than-mobile: 85%;
+$container-width-larger-than-phablet: 80%;
+$total-columns: 12;
+$column-width: 100 / $total-columns; // calculates individual column width based off of # of columns
+$column-margin: 4%; // space between columns
 
 // Misc
-$global-radius: 0px !default;
+$global-radius: 0px;

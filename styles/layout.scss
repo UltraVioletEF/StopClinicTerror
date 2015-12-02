@@ -3,7 +3,13 @@
 body {
 	background: $black;
 	color: $font-color;
+	font-family: $font-family;
 }
+
+h1, h2, h3, button {
+	font-family: $font-family-header;
+}
+
 
 header h1 {
 	a {
@@ -11,7 +17,7 @@ header h1 {
 		&:hover { color: $black; }
 	}
 	span {
-		background: $pink;
+		background: $purple;
 		padding: 5px 10px;
 		margin-right: 15px;
 	}
