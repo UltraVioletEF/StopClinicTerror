@@ -31,7 +31,7 @@ def geojson(item):
             "city": item.get('city'),
             "state": item.get('state'),
             "killed": item.get('killed', 0),
-            "injured": item.get('inured', 0),
+            "injured": item.get('injured', 0),
             "type": item.get('type'),
             "description": item.get('description')
         }
