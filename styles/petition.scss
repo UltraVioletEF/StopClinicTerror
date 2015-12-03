@@ -1,86 +1,86 @@
 #petition {
-    h3 {
-        text-align: center;
-        line-height: 1.1;
-    }
+  h3 {
+    text-align: center;
+    line-height: 1.1;
+  }
 
-    p.intro {
-        text-align: justify;
-        line-height: 1.2;
-    }
+  p.intro {
+    text-align: justify;
+    line-height: 1.2;
+  }
 }
 
 form.ak-form {
-    label {
-        display: none;
+  label {
+    display: none;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    
+    border: 0;
+    border-radius: 0;
+
+    color: $black;
+
+    &:focus {
+      border: 0;
+      outline: 3px solid $teal;
     }
+  }
 
-    input, select, textarea {
-        width: 100%;
-        
-        border: 0;
-        border-radius: 0;
+  .form_actions {
+    width: 50%;
+    display: inline-block;
+    float: left;
 
-        color: $black;
+    input[type="submit"] {
+      float: right;
+      width: 80px;
+      height: 65px;
 
-        &:focus {
-            border: 0;
-            outline: 3px solid $teal;
-        }
+      color: $white;
+      font-size: 3rem;
+      font-family: $font-family-header;
+      padding: 0 4px 4px 0;
+      margin: -10px 15px 0 0;
+
+      background-size: auto 100%; // stretch to fill height
+      background-position: 0% 0%;
+      background-image: url("../images/button.svg");
+      background-repeat: no-repeat;
     }
+  }
 
-    .form_actions {
-        width: 50%;
-        display: inline-block;
-        float: left;
+  #known_user {
+    display: none;
+  }
 
-        input[type="submit"] {
-            float: right;
-            width: 80px;
-            height: 65px;
+  #id_postal_box,
+  #id_country_box {
+    display: none;
+  }
 
-            color: $white;
-            font-size: 3rem;
-            font-family: $font-family-header;
-            padding: 0 4px 4px 0;
-            margin: -10px 15px 0 0;
+  p.disclaimer {
+    display: none;
+  }
 
-            background-size: auto 100%; // stretch to fill height
-            background-position: 0% 0%;
-            background-image: url("../images/button.svg");
-            background-repeat: no-repeat;
-        }
+  .share_actions {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+
+    div {
+      display: inline-block;
+      text-align: center;
     }
-
-    #known_user {
-        display: none;
+    a { font-family: 'fontello';
+      font-size: 1.8em;
+      background: none; // disable terrible gif backgrounds
     }
-
-    #id_postal_box,
-    #id_country_box {
-        display: none;
-    }
-
-    p.disclaimer {
-        display: none;
-    }
-
-    .share_actions {
-        width: 50%;
-        display: inline-block;
-        float: left;
-        margin-top: 5px;
-
-        div {
-            display: inline-block;
-            text-align: center;
-        }
-        a { font-family: 'fontello';
-            font-size: 1.8em;
-            background: none; // disable terrible gif backgrounds
-        }
-        .sp_fb_small a::before { content: '\e800'; }
-        .sp_tw_small a::before { content: '\e802'; }
-        .sp_em_small a::before { content: '\e801'; }
-    }
+    .sp_fb_small a::before { content: '\e800'; }
+    .sp_tw_small a::before { content: '\e802'; }
+    .sp_em_small a::before { content: '\e801'; }
+  }
 }

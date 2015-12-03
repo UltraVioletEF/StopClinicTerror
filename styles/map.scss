@@ -1,63 +1,64 @@
 #map {
-    rect.background {
-        cursor: default;
-        fill: none;
-        pointer-events: all;
-    }
+  rect.background {
+    cursor: default;
+    fill: none;
+    pointer-events: all;
+  }
 
-    .border {
-        fill: $purple;
-        stroke: $black;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
+  .border {
+    fill: $purple;
+    stroke: $black;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 
-    .bubble {
-        fill: $teal;
-        stroke: $black;
-        stroke-width: 2px;
-        cursor: pointer;
-        
-        circle {
-            &.hidden {
-                visibility: hidden;
-            }
+  .bubble {
+    fill: $teal;
+    stroke: $black;
+    stroke-width: 2px;
+    cursor: pointer;
 
-            &:hover, &.active {
-                fill: $white;
-            }
-        }
+    circle {
+      &.hidden {
+        visibility: hidden;
+      }
+
+      &:hover,
+      &.active {
+        fill: $white;
+      }
     }
+  }
 }
 
 #controls {
-    float: right;
-    margin-top: -22.5%;
-    margin-bottom: 22.5%;
+  float: right;
+  margin-top: -22.5%;
+  margin-bottom: 22.5%;
 
-    button {
-        background: $teal;
-        color: $white;
-        border: 0;
-        border-radius: 0;
-        font-size: 1.5em;
-        padding: 0 5px;
-        line-height: 1;
+  button {
+    background: $teal;
+    border: 0;
+    border-radius: 0;
+    color: $white;
+    font-size: 1.5em;
+    line-height: 1;
+    padding: 0 5px;
 
-        span.icon {
-            top: -2px;
-            position: relative;
-        }
+    span.icon {
+      position: relative;
+      top: -2px;
     }
+  }
 }
 
 #data {
-    h3.topline {
-        margin-left: grid-offset-length(6);
-        margin-top: -10px;
-        margin-bottom: 10px;
-        transform: rotate(-3deg);
-    }
+  h3.topline {
+    margin-bottom: 10px;
+    margin-left: grid-offset-length(6);
+    margin-top: -10px;
+    transform: rotate(-3deg);
+  }
 
 	ul#playback {
 		list-style-type: none;
