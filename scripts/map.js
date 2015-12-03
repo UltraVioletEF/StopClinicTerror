@@ -1,13 +1,16 @@
 var map = (function () {
     'use strict';
 
-    var dataEvent, dataTotal, dataPlayback, // underscore template functions
-        timer; // holds interval ID, so user can pause and resume
+    var dataTotal, dataYear, dataRow, dataEvent, dataDescription, // underscore template functions
+        timer, // holds interval ID, so user can pause and resume
+        animating; // is the animation currently playing?
 
     var drawMap = function() {
         dataTotal = _.template($('script#dataTotal').html(), {variable: 'd'});
+        dataYear = _.template($('script#dataYear').html(), {variable: 'd'});
+        dataRow = _.template($('script#dataRow').html(), {variable: 'd'});
         dataEvent = _.template($('script#dataEvent').html(), {variable: 'd'});
-        dataPlayback = _.template($('script#dataPlayback').html(), {variable: 'd'});
+        dataDescription = _.template($('script#dataDescription').html(), {variable: 'd'});
 
         var width = 768,
             height = 500;
@@ -55,8 +58,8 @@ var map = (function () {
             drawCircles(data);
             startAnimation(data);
 
-            // d3.selectAll('circle')
-            //     .classed('hidden', false);
+            //d3.selectAll('circle')
+            //    .classed('hidden', false);
         });
     };
 
@@ -91,18 +94,17 @@ var map = (function () {
                 return "translate(" + map.path.centroid(d) + ")";
             })
             .attr("r", function(d) { return radius(d.properties.killed + d.properties.injured); })
-            .on("mouseover", updateData)
+            .on("mouseover", function(d) {
+                console.log("animating", animating);
+                if (!animating) { updateData(d); }
+            })
             .classed("hidden", true);
     };
 
     var updateData = function(d) {
-        // clear playback info
-        $('#playback').empty();
-        $('#data .topline').empty();
-
         d.properties.location = getLocation(d);
-        var text = dataEvent(d.properties);
-        $('#data .event').html(text);
+        var text = dataDescription(d.properties);
+        $('#data .description').html(text);
     };
 
     var getLocation = function(d) {
@@ -120,6 +122,8 @@ var map = (function () {
     } ;
 
     var startAnimation = function(data) {
+        animating = true;
+
         var firstDate = new Date(data[0].properties.date);
         var lastDate = new Date(data[data.length - 1].properties.date);
 
@@ -128,26 +132,23 @@ var map = (function () {
 
         var y = 0;
         var i = 0;
-        var duration = 250; // in ms: each event display time, so total animation takes ~30 seconds to play 
+        var duration = 300; // in ms: each event display time, so total animation takes ~30 seconds to play 
 
         // group attacks by year
         var grouped = d3.nest()
             .key(function(d) { return (new Date(d.properties.date)).getUTCFullYear(); })
             .map(data);
 
+        // add first year to playback
+        $('.playback').prepend(dataYear({year: years[y].getUTCFullYear()}));
+
         timer = setInterval(function() {
-            var year = years[y].getUTCFullYear();
-            if (grouped[year] === undefined) {
-                // no data for this year, advance
-                y = y+1;
-                return false;
-            }
+            var year = years[y].getUTCFullYear(); // eg, 1995
+            var eventsInYear = grouped[year] || []; // list of events and properties
 
-            // update topline with current year
-            $('#data .topline').html(year);
-
-            // get the event
-            var e = grouped[year][i];
+            // get the event for this interval    
+            var e = eventsInYear[i];
+            //console.log(e);
 
             if (e) {
                 var eventDate = (new Date(e.properties.date));
@@ -173,30 +174,43 @@ var map = (function () {
                 var attacksData = attacks.data();
 
                 if (attacksData.length > 0) {
-                    // update summary with events
-                    var summary = _.extend(e.properties, {location: getLocation(e) });
-                    var summaryText = dataPlayback(summary);
-                    $('#playback').append(summaryText);
+                    // update year listing with events
+
+                    if (i%3 === 0) {
+                        // prepend new row
+                        $('ul.playback li.year').first() // the current year
+                            .children('ul') // the event ul
+                            .prepend(dataRow());
+                    }
+
+                    // append to first row
+                    var eventData = _.extend(e.properties, {location: getLocation(e) });
+                    var eventText = dataEvent(eventData);
+                    $('ul.playback li.year').first() // the current year
+                        .children('ul') // the event ul
+                        .children('.row').first()
+                        .append(eventText);
                 }
             }
 
             // end if at last event
-            if ((y >= years.length - 1) && (i >= grouped[year].length - 1)) {
+            if ((y >= years.length - 1) && (i >= eventsInYear.length - 1)) {
                 console.log('done');
                 window.clearInterval(timer);
                 d3.selectAll('circle.active')
                     .classed('active', false);
+
+                animating = false;
                 return true;
             }
 
             // advance counter for next iteration
             i = (i+1);
-            if (i > grouped[year].length) {
+            if (i >= eventsInYear.length) {
                 y = y+1;
                 i = 0;
-                
-                // clear playback log
-                $('#playback').empty();
+
+                $('.playback').prepend(dataYear({year: years[y].getUTCFullYear()}));
                 return true;
             }
         }, duration);
