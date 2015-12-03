@@ -6,9 +6,9 @@ var map = (function () {
         timer; // holds interval ID, so user can pause and resume
 
     var drawMap = function() {
-        dataTotal = _.template($('script#dataTotal').html());
-        dataEvent = _.template($('script#dataEvent').html());
-        dataPlayback = _.template($('script#dataPlayback').html());
+        dataTotal = _.template($('script#dataTotal').html(), {variable: 'd'});
+        dataEvent = _.template($('script#dataEvent').html(), {variable: 'd'});
+        dataPlayback = _.template($('script#dataPlayback').html(), {variable: 'd'});
 
         var width = 768,
             height = 500;
@@ -96,18 +96,24 @@ var map = (function () {
     };
 
     var updateData = function(d) {
-        if (d.properties.city && d.properties.state) {
-            var state_abbr = states_hash[d.properties.state];
-            d.properties.location = d.properties.city;
-            if (state_abbr) {
-                d.properties.location += ', ' + state_abbr;
-            }
-        } else {
-            d.properties.location = d.properties.state;
-        }
+        d.properties.location = getLocation(d);
         var text = dataEvent(d.properties);
         $('#data').html(text);
     };
+
+    var getLocation = function(d) {
+        var location;
+        if (d.properties.city && d.properties.state) {
+            var state_abbr = states_hash[d.properties.state];
+            location = d.properties.city;
+            if (state_abbr) {
+                location += ', ' + state_abbr;
+            }
+        } else {
+            location = d.properties.state;
+        }
+        return location;
+    } ;
 
     var startAnimation = function(data) {
         var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
