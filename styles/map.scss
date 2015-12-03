@@ -1,58 +1,63 @@
 #map {
-	rect.background {
+    rect.background {
+        cursor: default;
         fill: none;
         pointer-events: all;
-        cursor:default;
     }
 
-	.border {
-		fill: $purple;
-		stroke: $black;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
+    .border {
+        fill: $purple;
+        stroke: $black;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
 
-	.bubble {
-		fill: $teal;
-		stroke: $black;
-		stroke-width: 2px;
-		cursor: pointer;
-		
-		circle {
-			&.hidden {
-				visibility: hidden;
-			}
+    .bubble {
+        fill: $teal;
+        stroke: $black;
+        stroke-width: 2px;
+        cursor: pointer;
+        
+        circle {
+            &.hidden {
+                visibility: hidden;
+            }
 
-			&:hover, &.active {
-				fill: $white;
-			}
-		}
-	}
+            &:hover, &.active {
+                fill: $white;
+            }
+        }
+    }
 }
 
 #controls {
-	float: right;
-	margin-top: -22.5%;
-	margin-bottom: 22.5%;
+    float: right;
+    margin-top: -22.5%;
+    margin-bottom: 22.5%;
 
-	button {
-		background: $teal;
-		color: $white;
-		border: 0;
-		border-radius: 0;
-		font-size: 1.5em;
-	    padding: 0 5px;
-	    line-height: 1;
-	}
+    button {
+        background: $teal;
+        color: $white;
+        border: 0;
+        border-radius: 0;
+        font-size: 1.5em;
+        padding: 0 5px;
+        line-height: 1;
+
+        span.icon {
+            top: -2px;
+            position: relative;
+        }
+    }
 }
 
 #data {
-	h3.topline {
-	    margin-left: grid-offset-length(6);
-	    margin-top: -10px;
-	    margin-bottom: 10px;
-	    transform: rotate(-3deg);
-	}
+    h3.topline {
+        margin-left: grid-offset-length(6);
+        margin-top: -10px;
+        margin-bottom: 10px;
+        transform: rotate(-3deg);
+    }
 
 	ul#playback {
 		list-style-type: none;
