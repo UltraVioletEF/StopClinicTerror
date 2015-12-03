@@ -210,7 +210,10 @@ var map = (function () {
                 y = y+1;
                 i = 0;
 
-                $('.playback').prepend(dataYear({year: years[y].getUTCFullYear()}));
+                var nextYear = years[y].getUTCFullYear();
+                if (grouped[nextYear] && grouped[nextYear].length > 0) {
+                    $('.playback').prepend(dataYear({year: nextYear}));
+                }
                 return true;
             }
         }, duration);
