@@ -64,10 +64,6 @@
     list-style-type: none;
   }
 
-  .description + .playback {
-    top: 0;
-  }
-
   .playback {
     position: relative;
     top: -50px;
@@ -83,6 +79,7 @@
 
     li.row {
       width: 100%;
+
       .event {
         float: left;
         width: 25%;
@@ -91,11 +88,16 @@
     }
   }
 
+  .description + .playback {
+    // pull up when followed by playback
+    top: 0;
+  }
+
   .description {
     .location,
     .date {
       display: block;
-      transform: rotate(-3deg);
+      //transform: rotate(-3deg);
       font-family: $font-family-header;
       font-size: 2em;
     }
