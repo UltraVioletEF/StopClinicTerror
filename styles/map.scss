@@ -23,7 +23,7 @@
 				visibility: hidden;
 			}
 
-			&:not(.hidden):hover {
+			&:hover, &.active {
 				fill: $white;
 			}
 		}
@@ -48,6 +48,7 @@
 		transform: rotate(-3deg);
 		font-family: $font-family-header;
 		font-size: 2em;
+		float: left;
 	}
 
 	div.date {
@@ -60,5 +61,6 @@
 	p {
 		text-align: justify;
 		line-height: 1.2;
+		clear: both;
 	}
 }

@@ -44,7 +44,9 @@
       <div id="map"></div>
       <div class="row">
         <div id="controls" class="one-half column">
-          <button>Play</button>
+          <button><span class="icon icon.play"></span> Play</button>
+
+          <div id="playback"></div>
         </div>
         <div id="data" class="one-half column"></div>
       </div>
@@ -91,7 +93,17 @@ $(document).ready(function() {
 </script>
 
 <script type= "text/template" id="dataTotal">
-  Anti-choice terrorists have attacked <%= total %> clinics since 1995, killing <%= deaths %> people and injuring more than <%= injuries %> others.
+  Anti-choice terrorists have attacked over <%= total %> clinics since 1995, killing <%= deaths %> people and injuring dozens of others.
+</script>
+
+<script type= "text/template" id="dataPlayback">
+  <div class="date"><%= month %> <%= year %></div>
+  <% if (attacks) { %>
+    <p>
+      <span><%= attacks %> attack<%= attacks == 1 ? '': 's' %></span>
+      <span><% if (deaths) { %><%= deaths %> killed <% } %></span>
+      <span><% if (injured) { %><%= injured %> injured <% } %></span>
+  <% } %>
 </script>
 
 <script>

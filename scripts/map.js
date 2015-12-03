@@ -1,11 +1,14 @@
 var map = (function () {
     'use strict';
 
-    var dataEvent, dataTotal;
+    var dataEvent, dataTotal, dataPlayback, // underscore template functions
+        lastEvent, // holds the last event in the data, so we know when to stop
+        timer; // holds interval ID, so user can pause and resume
 
     var drawMap = function() {
-        dataEvent = _.template($('script#dataEvent').html());
         dataTotal = _.template($('script#dataTotal').html());
+        dataEvent = _.template($('script#dataEvent').html());
+        dataPlayback = _.template($('script#dataPlayback').html());
 
         var width = 768,
             height = 500;
@@ -44,9 +47,16 @@ var map = (function () {
 
         d3.json("data/attacks.json", function(error, attacks) {
             if (error) return console.error(error);
-            calculateTotal(attacks.features);
-            drawCircles(attacks.features);
-            startAnimation(attacks.features);
+
+            var data = _.sortBy(attacks.features,
+                function(d) { return (d.properties.date); }
+            );
+            lastEvent = data[data.length - 1];
+            console.log('lastEvent', lastEvent);
+
+            calculateTotal(data);
+            drawCircles(data);
+            startAnimation(data);
         });
     };
 
@@ -64,8 +74,6 @@ var map = (function () {
     };
 
     var drawCircles = function(data) {
-        console.log(data);
-
         var radius = d3.scale.sqrt()
             .domain([0, 10])
             .range([7, 14]);
@@ -83,8 +91,8 @@ var map = (function () {
                 return "translate(" + map.path.centroid(d) + ")";
             })
             .attr("r", function(d) { return radius(d.properties.killed + d.properties.injured); })
-            .on("mouseover", updateData);
-            //.classed("hidden", true);
+            .on("mouseover", updateData)
+            .classed("hidden", true);
     };
 
     var updateData = function(d) {
@@ -106,20 +114,65 @@ var map = (function () {
         var years = [1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
                     2009, 2010, 2011, 2012, 2013, 2014, 2015];
 
-        var grouped = d3.nest()
-            .key(function(d) { return parseInt((new Date(d.properties.date)).getUTCFullYear()); })
-            .key(function(d) { return parseInt((new Date(d.properties.date)).getUTCMonth()); })
-            .entries(data);
+        var y = 0;
+        var m = 0;
+        var duration = 100; // in ms, so total animation takes ~24 seconds to play 
 
-        console.log(grouped);
-
-        for (var y in years) {
+        timer = setInterval(function() {
+            // get year & month for interval
             var year = years[y];
-            for (var m in months) {
-                //console.log(m);
-                //d3.selectAll()
+            var month = months[m || 0];
+
+            // advance counter
+            m = (m+1);
+            if (m >= months.length) {
+                y = y+1;
+                m = 0;
             }
-        }
+
+            // filter for matching attacks
+            var attacks = d3.selectAll('circle')
+                .filter(function(d) {
+                    var date = new Date(d.properties.date);
+                    return ((date.getUTCFullYear() === year) && (date.getUTCMonth() === m));
+                });
+
+            d3.selectAll('circle.active')
+                .classed('active', false);
+            // unset previous iteration colors
+
+            attacks
+                .classed('hidden', false)
+                .classed('active', true);
+                // transition radius on show?
+
+            var attacksData = attacks.data();
+            var summary = {
+                month: month,
+                year: year,
+                attacks: attacksData.length,
+                deaths: d3.sum(attacksData, function(d) { return d.properties.killed; }),
+                injured: d3.sum(attacksData, function(d) { return d.properties.injured; })
+            };
+
+            // update summary with total for month
+            var summaryText = dataPlayback(summary);
+            $('#playback').html(summaryText);
+
+            // display last event in month
+            var lastEventInMonth;
+            if (attacksData.length > 0) {
+                lastEventInMonth = attacksData[attacksData.length - 1];
+                updateData(lastEventInMonth);
+            }
+
+            // end when through last event          
+            if (lastEventInMonth && lastEventInMonth.properties.date === lastEvent.properties.date) {
+                window.clearInterval(timer);
+                d3.selectAll('circle.active')
+                    .classed('active', false);
+            }
+        }, duration);
 
     };
 
