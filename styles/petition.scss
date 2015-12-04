@@ -3,7 +3,7 @@
 
   position: absolute;
   left: 50%;
-  top: 65%;
+  top: 500px; // relative to top, should be pixels to account for different phones
   width: 50%;
   height: 75px;
   font-size: 3rem;

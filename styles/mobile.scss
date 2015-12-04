@@ -8,11 +8,20 @@ $bp-tablet-only: "min-width: 480px) and (max-width: 800px";
   // reduce heading fonts
   h2#totalData { font-size: 2.2rem; }
   #petition h3 { font-size: 2.5rem; }
+
+  // make restart button icon only
+  #controls button.restart {
+    width: 25px;
+    .text { display: none; }
+  }
 }
 
 @media (#{$bp-tablet}) {
-  // move controls below florida
-  #controls { margin-top: -10px; }
+  #data .description .about { width: 100%; }
+  #data .description .text { margin-left: 0; }
+
+  // undo controls pull-up
+  #controls { margin: 0; }
 }
 
 @media (#{$bp-tablet-only}) {
@@ -38,15 +47,16 @@ $bp-tablet-only: "min-width: 480px) and (max-width: 800px";
   html { padding-top: 20px; }
   .logo h1 { margin-bottom: 0; }
   h2#totalData { margin-bottom: 0; }
+  
   // move controls up
   #controls {
-    margin-top: -20%;
-    // make restart button icon only
-    button.restart {
-      width: 25px;
-      .text { display: none; }
-    }
+    margin-top: -75px;
+
+    // move take action button below florida
+    button.skip-to-sign { top: 365px; }
   }
+
+
   #data .description .about {
     // location and date on same line
     .location,
