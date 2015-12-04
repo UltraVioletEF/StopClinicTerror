@@ -31,7 +31,7 @@
   }
 }
 
-form.ak-form {
+form.ak-form, form.actionkit-widget {
   label {
     display: none;
   }
@@ -44,10 +44,8 @@ form.ak-form {
 
     color: $black;
 
-    &:focus {
-      border: 0;
-      outline: 3px solid $teal;
-    }
+    &.error { outline: 3px solid $purple; }
+    &:focus { outline: 3px solid $teal; }
   }
 
   .form_actions {
@@ -61,10 +59,12 @@ form.ak-form {
       height: 65px;
 
       color: $white;
-      font-size: 3rem;
+      font-size: 2rem;
       font-family: $font-family-header;
       padding: 0 4px 4px 0;
       margin: -10px 15px 0 0;
+
+      border: none;
 
       background-size: auto 100%; // stretch to fill height
       background-position: 0% 0%;
@@ -85,8 +85,9 @@ form.ak-form {
   p.disclaimer {
     display: none;
   }
+}
 
-  .share_actions {
+#petition .share_actions {
     width: 50%;
     display: inline-block;
     float: left;
@@ -104,4 +105,3 @@ form.ak-form {
     .sp_tw_small a::before { content: '\e802'; }
     .sp_em_small a::before { content: '\e801'; }
   }
-}

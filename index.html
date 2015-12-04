@@ -57,7 +57,7 @@
   <section id="petition" class="four columns no-margin-left">
     <h3>Tell the Department of Justice: Investigate clinic terrorism</h3>
     <p class="intro">Over the last two decades, anti-women zealots have launched hundreds of violent attacks on Planned Parenthood clinics across the United States. These are acts of domestic terrorism and require the resources of a Department of Justice investigation to ensure patient safety.</p>
-    {% include petition.html %}
+    {% include petition_ajax.html %}
   </section>
 
   <footer class="four columns no-margin-left">
@@ -76,14 +76,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.10/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="scripts/jquery.browser.js"></script>
+
 <script src="scripts/states.js"></script>
 <script src="scripts/map.js"></script>
 <script>
 $(document).ready(function() {
     map.draw();
-    actionkit.forms.initPage();
+    
+    $('input').on('focusout', function(e) {
+      $(e.target).removeClass('error');
+    });
 });
+
+onWidgetSuccess = function(form, serverResponse) {
+  ga('send', 'signup');
+  console.log('signup');
+  return true;
+};
+
+onWidgetError = function(form, serverResponse) {
+  for (var f in serverResponse.errors) {
+    var msg = serverResponse.errors[f][0].toLowerCase().replace('.','');
+    $('input[name="'+f+'"]')
+      .addClass('error')
+      .attr('placeholder', msg);
+  }
+  return false;
+};
+
 </script>
 
 <script type= "text/template" id="dataTotal">
@@ -121,7 +141,7 @@ $(document).ready(function() {
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', '', 'auto');
+  ga('create', 'UA-71029927-1', 'auto');
   ga('send', 'pageview');
 
 </script>
