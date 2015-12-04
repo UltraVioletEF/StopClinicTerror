@@ -58,8 +58,19 @@ var map = (function () {
             drawCircles(data);
             startAnimation(data);
 
-            //d3.selectAll('circle')
-            //    .classed('hidden', false);
+            d3.select('button.restart')
+                .on('click', function() {
+                    stopAnimation();
+
+                    //clear existing info
+                    $('#data .description').empty();
+                    $('.playback').empty();
+                    d3.selectAll('circle')
+                        .classed('hidden', true);
+
+                    // restart animation
+                    startAnimation(data);
+                });
         });
     };
 
