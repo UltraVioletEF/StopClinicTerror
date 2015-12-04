@@ -2,16 +2,21 @@ $bp-small-screen:  "max-width: 1000px";
 $bp-tablet: "max-width: 800px";
 $bp-mobile: "max-width: 480px";
 
+$bp-tablet-only: "min-width: 480px) and (max-width: 800px";
+
 @media (#{$bp-small-screen}) {
   // reduce heading fonts
   h2#totalData { font-size: 2.2rem; }
   #petition h3 { font-size: 2.5rem; }
-
 }
 
 @media (#{$bp-tablet}) {
   // move controls below florida
   #controls { margin-top: -10px; }
+}
+
+@media (#{$bp-tablet-only}) {
+  // vertically center share and sign button
   #petition {
     .share_actions { 
       clear: right;
@@ -33,15 +38,17 @@ $bp-mobile: "max-width: 480px";
   html { padding-top: 20px; }
   .logo h1 { margin-bottom: 0; }
   h2#totalData { margin-bottom: 0; }
+  // move controls up
   #controls {
     margin-top: -20%;
-
+    // make restart button icon only
     button.restart {
       width: 25px;
       .text { display: none; }
     }
   }
   #data .description .about {
+    // location and date on same line
     .location,
     .date {
       display: inline-block;
@@ -51,14 +58,39 @@ $bp-mobile: "max-width: 480px";
     }
   }
   #data {
-    .description .text { margin-top: 0; }
-    li.year { }
+    .description { margin-top: 50px; } // push down below take action button
     h3 { margin-bottom: 0; }
     ul { margin-left: 0; }
   }
 
+  #data .playback {
+    // years on own line
+    // event row full width
+    li.year {
+      margin: 0;
+      ul {
+        margin: 0; 
+        width: 100%;
+      }
+    }
+    li.row {
+      margin-bottom: 0;
+      .event {
+        font-size: 75%;
+        margin-left: 0;
+      }
+    }
+  } 
+
   // undo petition top
   section#petition { margin-top: 0; }
+
+  footer {
+    .u-pull-left,
+    .u-pull-right {
+      margin-top: -10px;
+    }
+  }
 }
 
 @media (#{$bp-larger-than-phablet}) {

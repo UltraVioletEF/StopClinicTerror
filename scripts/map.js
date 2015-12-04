@@ -105,16 +105,22 @@ var map = (function () {
                 return "translate(" + map.path.centroid(d) + ")";
             })
             .attr("r", function(d) { return radius(d.properties.killed + d.properties.injured); })
-            .on("mouseover", updateData)
-            .on("touchstart", updateData)
+            .on("mouseover", hover)
+            .on("touchstart", hover)
             .classed("hidden", true);
     };
 
     var updateData = function(d) {
-        if (animating) { return false; }
         d.properties.location = getLocation(d);
         var text = dataDescription(d.properties);
         $('#data .description').html(text);
+    };
+
+    var hover = function(d) {
+        // unset active events
+        d3.selectAll('circle.active')
+            .classed('active', false);
+        updateData(d);
     };
 
     var getLocation = function(d) {
@@ -162,12 +168,13 @@ var map = (function () {
             if (e) {
                 var eventDate = (new Date(e.properties.date));
 
-                // filter for other attacks in month
+                // filter for other attacks in month and city
                 var attacks = d3.selectAll('circle')
                     .filter(function(d) {
                         var date = new Date(d.properties.date);
                         return ((date.getUTCFullYear() === year) &&
-                                (date.getUTCMonth() === eventDate.getUTCMonth())
+                                (date.getUTCMonth() === eventDate.getUTCMonth()) &&
+                                (d.properties.city === e.properties.city)
                             );
                     });
 
@@ -204,11 +211,13 @@ var map = (function () {
 
             // end if at last event
             if ((y >= years.length - 1) && (i >= eventsInYear.length - 1)) {
+                // stop animation
                 window.clearInterval(timer);
-                d3.selectAll('circle.active')
-                    .classed('active', false);
-
                 animating = false;
+
+                // show data for final event
+                updateData(e);
+                
                 return true;
             }
 
