@@ -15,7 +15,7 @@ body {
 
 h1, h2, h3, button {
   font-family: $font-family-header;
-  letter-spacing: 0;
+  letter-spacing: 0.5px;
 }
 
 .logo h1 {
@@ -24,8 +24,16 @@ h1, h2, h3, button {
 
 h2#totalData {
   //transform: rotate(-3deg);
-  font-size: 3.2rem;
+  font-size: 3rem;
   text-align: right;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+section#petition {
+  margin-top: -20px;
 }
 
 section#content.u-pull-right {
