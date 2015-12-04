@@ -12,8 +12,9 @@ var map = (function () {
         dataEvent = _.template($('script#dataEvent').html(), {variable: 'd'});
         dataDescription = _.template($('script#dataDescription').html(), {variable: 'd'});
 
-        var width = 768,
-            height = 500;
+        var aspectRatio = 500 / 750;
+        var width = 768;
+        var height = width * aspectRatio;
         var self = this;
 
         // map projection: Albers USA
@@ -28,8 +29,17 @@ var map = (function () {
         // responsive SVG
         this.svg = d3.select('#map').insert('svg', ':first-child')
             .attr('preserveAspectRatio', 'xMinYMin meet')
-            .attr('viewBox', '0 0 '+width+' '+height)
-            .classed('svg-content-responsive', true);
+            .attr("width", width) // need to set these for IE
+            .attr("height", height)
+            .attr("viewBox", "0 0 " + width + " " + height);
+
+        // resize for IE
+        $(window).resize(function() {
+            var newWidth = $('#map').width(),
+                newHeight = newWidth * aspectRatio;
+            self.svg.attr('width', newWidth)
+                .attr('height', newHeight);
+        });
 
         this.svg.append('rect')
             .attr('class', 'background')
