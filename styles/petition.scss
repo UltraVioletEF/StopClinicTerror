@@ -1,3 +1,24 @@
+#controls button.skip-to-sign {
+  display: block;
+
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  width: 50%;
+  height: 75px;
+  font-size: 3rem;
+
+  background-color: transparent;
+  background-position: 0% 0%;
+  background-image: url("../images/button-wide.svg");
+  background-repeat: no-repeat;
+
+  padding-right: 20px;
+  padding-bottom:5px;
+
+  z-index: 10;
+}
+
 #petition {
   h3 {
     text-align: center;
@@ -32,7 +53,7 @@ form.ak-form {
   .form_actions {
     width: 50%;
     display: inline-block;
-    float: left;
+    float: right;
 
     input[type="submit"] {
       float: right;

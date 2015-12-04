@@ -105,14 +105,13 @@ var map = (function () {
                 return "translate(" + map.path.centroid(d) + ")";
             })
             .attr("r", function(d) { return radius(d.properties.killed + d.properties.injured); })
-            .on("mouseover", function(d) {
-                console.log("animating", animating);
-                if (!animating) { updateData(d); }
-            })
+            .on("mouseover", updateData)
+            .on("touchstart", updateData)
             .classed("hidden", true);
     };
 
     var updateData = function(d) {
+        if (animating) { return false; }
         d.properties.location = getLocation(d);
         var text = dataDescription(d.properties);
         $('#data .description').html(text);
@@ -143,7 +142,7 @@ var map = (function () {
 
         var y = 0;
         var i = 0;
-        var duration = 300; // in ms: each event display time, so total animation takes ~30 seconds to play 
+        var duration = 300; // in ms: each event display time, so total animation takes ~30 seconds
 
         // group attacks by year
         var grouped = d3.nest()
@@ -159,7 +158,6 @@ var map = (function () {
 
             // get the event for this interval    
             var e = eventsInYear[i];
-            //console.log(e);
 
             if (e) {
                 var eventDate = (new Date(e.properties.date));
@@ -206,7 +204,6 @@ var map = (function () {
 
             // end if at last event
             if ((y >= years.length - 1) && (i >= eventsInYear.length - 1)) {
-                console.log('done');
                 window.clearInterval(timer);
                 d3.selectAll('circle.active')
                     .classed('active', false);
@@ -228,51 +225,20 @@ var map = (function () {
                 return true;
             }
         }, duration);
+    };
 
-        // end after reasonable duration
-        // var failsafe = duration*data.length;
-        // console.log(failsafe);
-        // setTimeout(function() {
-        //     console.log('cancel interval');
-        //     window.clearInterval(timer);
-        // }, failsafe);
+    var stopAnimation = function() {
+        animating = false;
+        window.clearInterval(timer);
+        d3.selectAll('circle')
+            .classed('hidden', false);
 
+        // TBD, show all events?
     };
 
     return {
         draw: drawMap,
         start: startAnimation,
-        //pause: pauseAnimation,
-        //reset: resetAnimation
+        stop: stopAnimation,
     };
 })();
-
-
-// Resolves collisions between d and all other circles.
-// http://bl.ocks.org/mbostock/1748247
-function collide(alpha) {
-  var quadtree = d3.geom.quadtree(nodes);
-  return function(d) {
-    var r = d.radius + maxRadius + Math.max(padding, clusterPadding),
-        nx1 = d.x - r,
-        nx2 = d.x + r,
-        ny1 = d.y - r,
-        ny2 = d.y + r;
-    quadtree.visit(function(quad, x1, y1, x2, y2) {
-      if (quad.point && (quad.point !== d)) {
-        var x = d.x - quad.point.x,
-            y = d.y - quad.point.y,
-            l = Math.sqrt(x * x + y * y),
-            r = d.radius + quad.point.radius + (d.cluster === quad.point.cluster ? padding : clusterPadding);
-        if (l < r) {
-          l = (l - r) / l * alpha;
-          d.x -= x *= l;
-          d.y -= y *= l;
-          quad.point.x += x;
-          quad.point.y += y;
-        }
-      }
-      return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
-    });
-  };
-}

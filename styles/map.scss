@@ -33,17 +33,22 @@
 
 #controls {
   float: right;
-  margin-bottom: 22.5%;
-  margin-top: -22.5%;
+  margin-bottom: 20%;
+  margin-top: -20%;
+  z-index: 10;
 
   button {
-    background: $teal;
+    background-color: $teal;
     border: 0;
     border-radius: 0;
     color: $white;
-    font-size: 1.5em;
+    font-size: 1.1em;
+    height: 25px;
     line-height: 1;
     padding: 0 5px;
+    position: relative;
+    width: 75px;
+    // idk, but makes pointer events work
 
     .icon {
       position: relative;
