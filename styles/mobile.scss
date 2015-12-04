@@ -1,6 +1,8 @@
 $bp-small-screen:  "max-width: 1000px";
 $bp-tablet: "max-width: 800px";
 $bp-mobile: "max-width: 480px";
+$bp-iphone6: "max-width: 375px";
+$bp-iphone5: "max-width: 320px";
 
 $bp-tablet-only: "min-width: 480px) and (max-width: 800px";
 
@@ -53,7 +55,7 @@ $bp-tablet-only: "min-width: 480px) and (max-width: 800px";
     margin-top: -75px;
 
     // move take action button below florida
-    button.skip-to-sign { top: 365px; }
+    button.skip-to-sign { top: 375px; }
   }
 
 
@@ -102,6 +104,20 @@ $bp-tablet-only: "min-width: 480px) and (max-width: 800px";
     }
   }
 }
+
+@media (#{$bp-iphone6}) {
+  #controls button.skip-to-sign { top: 365px; }
+}
+
+@media (#{$bp-iphone5}) {
+  #controls button.skip-to-sign {
+    top: 340px;
+    width: 60%;
+    left: 40%;
+  }
+}
+
+
 
 @media (#{$bp-larger-than-phablet}) {
   // hide "skip-to-sign" button
