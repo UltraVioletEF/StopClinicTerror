@@ -44,12 +44,12 @@
       <div id="map">
         <!-- svg goes here -->          
         <div id="controls" class="row">
-          <button class="restart"><span class="text">Replay </span><span class="icon icon-play"></span> </button>
+          <button class="restart fade-in"><span class="text">Replay </span><span class="icon icon-play"></span> </button>
           <button class="skip-to-sign mobileonly"><a href="#petition">Take Action</a></button>
         </div>
       </div>
       <div id="data">
-        <div class="description row"></div>
+        <div class="description row fade-in"></div>
         <ul class="playback u-cf"></ul>
       </div>
   </section>
@@ -74,7 +74,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.10/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
 <script src="scripts/states.js"></script>
@@ -82,6 +81,7 @@
 <script>
 $(document).ready(function() {
     map.draw();
+    setTimeout(map.start, 2000);
 
     $('input').on('focusout', function(e) {
       $(e.target).removeClass('error');
@@ -110,9 +110,9 @@ onWidgetError = function(form, serverResponse) {
 </script>
 
 <script type= "text/template" id="dataYear">
-  <li class="year" id="<%= d.year %>">
+  <li class="year fade-in" id="<%= d.year %>">
     <h3><%= d.year %></h3>
-    <ul></ul>
+    <ul class="events"></ul>
   </li>
 </script>
 
@@ -121,13 +121,13 @@ onWidgetError = function(form, serverResponse) {
 </script>
 
 <script type= "text/template" id="dataEvent">
-  <div class="event"><%= d.location %></div>
+  <div class="event fade-in"><%= d.location %></div>
 </script>
 
 <script type= "text/template" id="dataDescription">
   <div class="about five columns">
     <div class="location"><%= d.location %></div>
-    <div class="date"><%= d.date %></div>
+    <div class="date"><%= d.date_string %></div>
   </div>
   <div class="text seven columns">
     <p><%= d.description %></p>

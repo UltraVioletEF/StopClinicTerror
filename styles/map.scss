@@ -13,22 +13,22 @@
   }
 
   .bubble {
-    cursor: pointer;
     fill: $teal;
     stroke: $black;
     stroke-width: 2px;
+    cursor: pointer;
 
     circle {
-      &.hidden {
-        opacity: 0;
-      }
-
-      &:hover,
-      &.active {
+      &:hover, &.active {
         fill: $white;
-        opacity: 1;
-        transition: opacity 1500ms;
       }
+      &.active {
+        opacity: 1;
+      }
+    }
+
+    .bubble.animating {
+      cursor: default;
     }
   }
 }

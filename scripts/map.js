@@ -4,7 +4,13 @@ var map = (function () {
     var aspectRatio, width, height, // for resizing
         dataTotal, dataYear, dataRow, dataEvent, dataDescription, // underscore template functions
         timer, // holds interval ID, so user can pause and resume
-        animating; // is the animation currently playing?
+        animating, // is the animation currently playing?
+        cachedData;
+
+    // month name lookups
+    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    var duration = 500; // event display time in ms, 500 means total animation takes ~50 seconds
 
     var drawMap = function() {
         dataTotal = _.template($('script#dataTotal').html(), {variable: 'd'});
@@ -60,9 +66,14 @@ var map = (function () {
             );
 
             calculateTotal(data);
-            drawCircles(data);
-            startAnimation(data);
 
+            // draw circles, but start hidden
+            drawCircles(data);
+            
+            // save data for animation
+            cachedData = data;
+
+            // setup restart button
             d3.select('button.restart')
                 .on('click', function() {
                     stopAnimation();
@@ -74,7 +85,7 @@ var map = (function () {
                         .classed('hidden', true);
 
                     // restart animation
-                    startAnimation(data);
+                    startAnimation(cachedData);
                 });
         });
     };
@@ -110,22 +121,40 @@ var map = (function () {
                 return "translate(" + map.path.centroid(d) + ")";
             })
             .attr("r", function(d) { return radius(d.properties.killed + d.properties.injured); })
+            .style("opacity", 0)
+            .classed("hidden", true)
             .on("mouseover", hover)
-            .on("touchstart", hover)
-            .classed("hidden", true);
+            .on("touchstart", hover);
     };
 
     var updateData = function(d) {
         d.properties.location = getLocation(d);
+        d.properties.date_string = getDate(d);
         var text = dataDescription(d.properties);
-        $('#data .description').html(text);
+        $('#data .description').html(text).addClass('show');
     };
 
     var hover = function(d) {
-        // unset active events
+        // don't update if animating
+        if (animating || d3.select(this).classed('hidden')) { return false; }
+
+        // unset other active events
         d3.selectAll('circle.active')
             .classed('active', false);
         updateData(d);
+    };
+
+    var getDate = function(d) {
+        // turn "YYYY-MM(-DD)" into "Month Day Year"
+        if (d.properties.date) {
+            var parts = d.properties.date.split('-');
+            if (parts.length == 1) { return parts[0]; } // year
+            else {
+                var monthIndex = parseInt(parts[1]) - 1;
+                if (parts.length == 2) { return months[monthIndex] + " " + parts[0]; } // month year
+                if (parts.length == 3) { return months[monthIndex] + " " + parts[2] + ", " + parts[0];} // month day, year
+            }
+        }
     };
 
     var getLocation = function(d) {
@@ -142,18 +171,18 @@ var map = (function () {
         return location;
     } ;
 
-    var startAnimation = function(data) {
+    var startAnimation = function() {
         animating = true;
+        d3.selectAll('g.bubble').classed('animating', animating);
+
+        var data = cachedData;
 
         var firstDate = new Date(data[0].properties.date);
         var lastDate = new Date(data[data.length - 1].properties.date);
-
-        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec'];
         var years = d3.time.years(firstDate, lastDate, 1); // year boundary dates
 
         var y = 0;
         var i = 0;
-        var duration = 300; // in ms: each event display time, so total animation takes ~30 seconds
 
         // group attacks by year
         var grouped = d3.nest()
@@ -162,6 +191,7 @@ var map = (function () {
 
         // add first year to playback
         $('.playback').prepend(dataYear({year: years[y].getUTCFullYear()}));
+        $('.playback li.year:first').addClass('show');
 
         timer = setInterval(function() {
             var year = years[y].getUTCFullYear(); // eg, 1995
@@ -191,6 +221,8 @@ var map = (function () {
                 attacks
                     .classed('hidden', false)
                     .classed('active', true);
+                attacks.transition(duration)
+                    .style('opacity', 1);
 
                 var attacksData = attacks.data();
 
@@ -199,18 +231,19 @@ var map = (function () {
 
                     if (i%3 === 0) {
                         // prepend new row
-                        $('ul.playback li.year').first() // the current year
-                            .children('ul') // the event ul
+                        $('.playback .year').first() // the current year
+                            .children('.events') // the event ul
                             .prepend(dataRow());
                     }
 
                     // append to first row
                     var eventData = _.extend(e.properties, {location: getLocation(e) });
-                    var eventText = dataEvent(eventData);
-                    $('ul.playback li.year').first() // the current year
-                        .children('ul') // the event ul
+                    var eventText = $(dataEvent(eventData));
+                    $('.playback .year').first() // the current year
+                        .children('.events') // the event ul
                         .children('.row').first()
                         .append(eventText);
+                    eventText.addClass('show');
                 }
             }
 
@@ -222,6 +255,9 @@ var map = (function () {
 
                 // show data for final event
                 updateData(e);
+
+                // show restart button
+                $('button.restart').addClass('show');
                 
                 return true;
             }
@@ -235,6 +271,7 @@ var map = (function () {
                 var nextYear = years[y].getUTCFullYear();
                 if (grouped[nextYear] && grouped[nextYear].length > 0) {
                     $('.playback').prepend(dataYear({year: nextYear}));
+                    $('.playback li.year:first').addClass('show');
                 }
                 return true;
             }
@@ -243,6 +280,7 @@ var map = (function () {
 
     var stopAnimation = function() {
         animating = false;
+        d3.selectAll('g.bubble').classed('animating', animating);
         window.clearInterval(timer);
         d3.selectAll('circle')
             .classed('hidden', false);
@@ -261,5 +299,6 @@ var map = (function () {
         draw: drawMap,
         start: startAnimation,
         stop: stopAnimation,
+        cache: cachedData
     };
 })();
