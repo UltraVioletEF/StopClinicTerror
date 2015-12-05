@@ -1,7 +1,8 @@
 var map = (function () {
     'use strict';
 
-    var dataTotal, dataYear, dataRow, dataEvent, dataDescription, // underscore template functions
+    var aspectRatio, width, height, // for resizing
+        dataTotal, dataYear, dataRow, dataEvent, dataDescription, // underscore template functions
         timer, // holds interval ID, so user can pause and resume
         animating; // is the animation currently playing?
 
@@ -12,9 +13,9 @@ var map = (function () {
         dataEvent = _.template($('script#dataEvent').html(), {variable: 'd'});
         dataDescription = _.template($('script#dataDescription').html(), {variable: 'd'});
 
-        var aspectRatio = 500 / 750;
-        var width = 768;
-        var height = width * aspectRatio;
+        aspectRatio = 500 / 750;
+        width = 768;
+        height = width * aspectRatio;
         var self = this;
 
         // map projection: Albers USA
@@ -33,20 +34,14 @@ var map = (function () {
             .attr("height", height)
             .attr("viewBox", "0 0 " + width + " " + height);
 
-        // resize for IE
-        $(window).resize(function() {
-            var newWidth = $('#map').width(),
-                newHeight = newWidth * aspectRatio;
-            self.svg.attr('width', newWidth)
-                .attr('height', newHeight);
-        });
-
         this.svg.append('rect')
             .attr('class', 'background')
             .attr('width', width)
             .attr('height', height);
 
         this.map = this.svg.append('g');
+        setMapSize();
+        $(window).resize(setMapSize);
 
         d3.json("data/us-states.json", function(error, us) {
           if (error) return console.error(error);
@@ -253,6 +248,13 @@ var map = (function () {
             .classed('hidden', false);
 
         // TBD, show all events?
+    };
+
+    var setMapSize = function() {
+        width = $('#map').width();
+        height = width * aspectRatio;
+        d3.select('svg').attr('width', width)
+            .attr('height', height);
     };
 
     return {
