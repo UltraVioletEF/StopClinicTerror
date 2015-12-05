@@ -111,10 +111,14 @@
   .description {
     .location,
     .date {
-      display: inline-block;
+      display: block;
       //transform: rotate(-3deg);
       font-family: $font-family-header;
       font-size: 2em;
+    }
+
+    .text {
+      margin-top: -30px; // pull up over hidden controls
     }
   }
 }
