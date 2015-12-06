@@ -21,4 +21,7 @@ grunt
 
 Open a browser to localhost:4000 and it will reflect changes made to html, style or script files automatically.
 
-Deploy by committing to the gh-pages branch.
+## Deployment
+```
+grunt buildcontrol:ghpages
+```

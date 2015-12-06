@@ -49,7 +49,7 @@ var map = (function () {
         setMapSize();
         $(window).resize(setMapSize);
 
-        d3.json("data/us-states.json", function(error, us) {
+        d3.json("data/96a4c04b.us-states.json", function(error, us) {
           if (error) return console.error(error);
           
           self.map.append("path")
@@ -58,7 +58,7 @@ var map = (function () {
               .classed('border', true);
         });
 
-        d3.json("data/attacks.json", function(error, attacks) {
+        d3.json("data/7c7cdb75.attacks.json", function(error, attacks) {
             if (error) return console.error(error);
 
             var data = _.sortBy(attacks.features,
