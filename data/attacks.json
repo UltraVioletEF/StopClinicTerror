@@ -5,6 +5,614 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
+                    -122.42349, 
+                    37.77239
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "San Francisco", 
+                "description": "A burning tire soaked with gasoline was thrown at a building housing the Pregnancy Consultation Center and the Buena Vista Women's Center.", 
+                "state": "California", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -119.29317, 
+                    34.27834
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Ventura", 
+                "description": "A fire was set at a family planning clinic in Ventura.", 
+                "state": "California", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -120.03078, 
+                    34.53834
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Santa Barbara", 
+                "description": "A fire broke out in a doctor's office in Santa Barbara.", 
+                "state": "California", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -120.4522, 
+                    35.38742
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "San Luis Obispo", 
+                "description": "A fire badly damaged a Planned Parenthood clinic in San Luis Obispo.", 
+                "state": "California", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -122.00979, 
+                    37.02161
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Santa Cruz", 
+                "description": "Flares were thrown onto the roof of a clinic in Santa Cruz.", 
+                "state": "California", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -106.65114, 
+                    35.08449
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Albuquerque", 
+                "description": "Ricky Lee McDonald used chains, padlocks, and a burning shopping cart in 4 attempts to shut down a women's health clinic.", 
+                "state": "New Mexico", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -76.28522, 
+                    36.84681
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Norfolk", 
+                "description": "A fire was set to the Tidewater Women's Health Center, along with another clinic in Newport News, VA. Two were convicted.", 
+                "state": "Virginia", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -122.42349, 
+                    37.77239
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "San Francisco", 
+                "description": "A burning tire was forced through a window at an abortion clinic, leading to some damage.", 
+                "state": "California", 
+                "date": "1995-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -76.46965, 
+                    37.08339
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Newport News", 
+                "description": "A fire was set to the Peninsula Medical Center for Women in Newport News, along with another clinic in Norfolk VA. Two were convicted.", 
+                "state": "Virginia", 
+                "date": "1995-03", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -89.58899, 
+                    40.69365
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Peoria", 
+                "description": "A \u201cMolotov Cocktail\u201d burned the doors and sidewalks, causing an estimated $10,000 worth of damage.", 
+                "state": "Illinois", 
+                "date": "1995-09", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -76.30551, 
+                    40.03788
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Lancaster", 
+                "description": "A firebomb severely damaged a Planned Parenthood office in Lancaster, Pa., that offers abortion referrals and family planning. ", 
+                "state": "Pennsylvania", 
+                "date": "1995-09", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -110.76243, 
+                    43.47993
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Jackson", 
+                "description": "A clinic in Jackson, WY was bombed by Richard Thomas Andrews. He was later indicted for multiple attacks on clinics across several states.", 
+                "state": "Wyoming", 
+                "date": "1995-09", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -117.42908, 
+                    47.65966
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Spokane", 
+                "description": "Four people were convicted of conspiring in the bombing of the clinic and a bank robbery.", 
+                "state": "Washington", 
+                "date": "1996-07", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -117.42908, 
+                    47.65966
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Spokane", 
+                "description": "Three white separatists were convicted for multiple bombings and bank robberies in the Spokane area, including a Planned Parenthood.", 
+                "state": "Washington", 
+                "date": "1996-07-12", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -91.35848, 
+                    39.70838
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Hannibal", 
+                "description": "Arson of Family Planning Clinic. Damages estimated at $75,000.", 
+                "state": "Missouri", 
+                "date": "1996-11", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -90.07507, 
+                    29.95465
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "1", 
+                "city": "New Orleans", 
+                "description": "Dr. Calvin Jackson was stabbed 15 times, losing 14 pints of blood, outside the Orleans Womens Clinic. The man served no jail time.", 
+                "state": "Louisiana", 
+                "date": "1996-12-18", 
+                "type": "STABBING", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -95.99277, 
+                    36.15398
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Tulsa", 
+                "description": "Two separate bomb incidents at the Reproductive Services and Adoption Affiliates clinic. A teenager was convicted in the bombing and his parents were charged.", 
+                "state": "Oklahoma", 
+                "date": "1997-01", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -95.99277, 
+                    36.15398
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Tulsa", 
+                "description": "Two separate bomb incidents at the Reproductive Services and Adoption Affiliates clinic. A teenager was convicted in the bombing and his parents were charged.", 
+                "state": "Oklahoma", 
+                "date": "1997-01", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -84.38798, 
+                    33.749
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "7", 
+                "city": "Atlanta", 
+                "description": "A bomb destroyed most of the clinic. The second bomb was designed to kill rescue, law enforcement, and clinic staff. 7 injured.", 
+                "state": "Georgia", 
+                "date": "1997-01", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -77.17109, 
+                    38.88233
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Falls Church", 
+                "description": "A Falls Church abortion clinic was set on fire causing an estimated $25,000 in damages. James Mitchell sentenced to 10 years.", 
+                "state": "Virginia", 
+                "date": "1997-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -118.37897, 
+                    34.17223
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "North Hollywood", 
+                "description": "A \u201cMolotov Cocktail\u201d was thrown through a window at the Family Planning Assoc. Medical Group causing $1,000 in damage.", 
+                "state": "California", 
+                "date": "1997-03", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -111.03856, 
+                    45.67965
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Bozeman", 
+                "description": "An anti-abortion activist was arrested for setting fire to the building housing the office of Dr. Susan Wicklund.", 
+                "state": "Montana", 
+                "date": "1997-03", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -79.79198, 
+                    36.07264
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Greensboro", 
+                "description": "The Piedmont-Carolina Medical clinic was set on fire causing $50,000 in damage.", 
+                "state": "North Carolina", 
+                "date": "1997-03", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -119.01871, 
+                    35.37329
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Bakersfield", 
+                "description": "A pick-up truck loaded with 13 gas cans and 3 propane tanks was rammed into the clinic, then set on fire. ", 
+                "state": "California", 
+                "date": "1997-03", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -110.56104, 
+                    45.66244
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Livingston", 
+                "description": "The roof of the Medical Arts Center where a doctor who performed abortions worked was set on fire. An anti-abortion activist was arrested.", 
+                "state": "Montana", 
+                "date": "1997-04-02", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -122.67621, 
+                    45.52345
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Portland", 
+                "description": "An arson occurred at All Women's Health Services. Damages were estimated to be $5,000.", 
+                "state": "Oregon", 
+                "date": "1997-05", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -87.56917, 
+                    33.20984
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Tuscaloosa", 
+                "description": "West Alabama Women's Center sustained $250,000 in damages, after a firebombing gutted the interior of the building", 
+                "state": "Alabama", 
+                "date": "1997-08", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -122.67621, 
+                    45.52345
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Portland", 
+                "description": "Lovejoy Surgicenter was set on fire and suffered $250,000 in damage, after receiving several bomb threats from 5/17-19.", 
+                "state": "Oregon", 
+                "date": "1997-10", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -77.61556, 
+                    43.15478
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Rochester", 
+                "description": "A sniper shot at Dr. David Gandell's residence in Rochester, New York. Gandell is a well-known abortion provider.", 
+                "state": "New York", 
+                "date": "1997-10-28", 
+                "type": "SHOOTING", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -86.80249, 
+                    33.52066
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "1", 
+                "city": "Birmingham", 
+                "description": "A police officer was killed and a nurse was severely injured. Eric Rudolph, who also set off bombs in Atlanta, admitted responsibility.", 
+                "state": "Alabama", 
+                "date": "1998-01-29", 
+                "type": "BOMB", 
+                "killed": "1"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -86.80249, 
+                    33.52066
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Birmingham", 
+                "description": "Eric Rudolph killed a security guard at an abortion clinic. He was also responsible for detonating bombs in Atlanta.", 
+                "state": "Alabama", 
+                "date": "1998-01-29", 
+                "type": "BOMB", 
+                "killed": "1"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -117.39616, 
+                    33.95335
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Riverside", 
+                "description": "Planned Parenthood of San Diego and Riverside Counties was firebombed. A white RV was spotted leaving the scene", 
+                "state": "California", 
+                "date": "1998-03", 
+                "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
                     -82.6429802784393, 
                     27.761409527703
                 ]
@@ -366,386 +974,6 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
-                    -122.42349, 
-                    37.77239
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "San Francisco", 
-                "description": "A burning tire soaked with gasoline was thrown at a building housing the Pregnancy Consultation Center and the Buena Vista Women's Center.", 
-                "state": "California", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -119.29317, 
-                    34.27834
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Ventura", 
-                "description": "A fire was set at a family planning clinic in Ventura.", 
-                "state": "California", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -120.03078, 
-                    34.53834
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Santa Barbara", 
-                "description": "A fire broke out in a doctor's office in Santa Barbara.", 
-                "state": "California", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -120.4522, 
-                    35.38742
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "San Luis Obispo", 
-                "description": "A fire badly damaged a Planned Parenthood clinic in San Luis Obispo.", 
-                "state": "California", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -122.00979, 
-                    37.02161
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Santa Cruz", 
-                "description": "Flares were thrown onto the roof of a clinic in Santa Cruz.", 
-                "state": "California", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -106.65114, 
-                    35.08449
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Albuquerque", 
-                "description": "Ricky Lee McDonald used chains, padlocks, and a burning shopping cart in 4 attempts to shut down a women's health clinic.", 
-                "state": "New Mexico", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -76.28522, 
-                    36.84681
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Norfolk", 
-                "description": "A fire was set to the Tidewater Women's Health Center, along with another clinic in Newport News, VA. Two were convicted.", 
-                "state": "Virginia", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -122.42349, 
-                    37.77239
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "San Francisco", 
-                "description": "A burning tire was forced through a window at an abortion clinic, leading to some damage.", 
-                "state": "California", 
-                "date": "1995-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -76.46965, 
-                    37.08339
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Newport News", 
-                "description": "A fire was set to the Peninsula Medical Center for Women in Newport News, along with another clinic in Norfolk VA. Two were convicted.", 
-                "state": "Virginia", 
-                "date": "1995-03", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -89.58899, 
-                    40.69365
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Peoria", 
-                "description": "A \u201cMolotov Cocktail\u201d burned the doors and sidewalks, causing an estimated $10,000 worth of damage.", 
-                "state": "Illinois", 
-                "date": "1995-09", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -76.30551, 
-                    40.03788
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Lancaster", 
-                "description": "A firebomb severely damaged a Planned Parenthood office in Lancaster, Pa., that offers abortion referrals and family planning. ", 
-                "state": "Pennsylvania", 
-                "date": "1995-09", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -110.76243, 
-                    43.47993
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Jackson", 
-                "description": "A clinic in Jackson, WY was bombed by Richard Thomas Andrews. He was later indicted for multiple attacks on clinics across several states.", 
-                "state": "Wyoming", 
-                "date": "1995-09", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -91.35848, 
-                    39.70838
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Hannibal", 
-                "description": "Arson of Family Planning Clinic. Damages estimated at $75,000.", 
-                "state": "Missouri", 
-                "date": "1996-11", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -95.99277, 
-                    36.15398
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Tulsa", 
-                "description": "Two separate bomb incidents at the Reproductive Services and Adoption Affiliates clinic. A teenager was convicted in the bombing and his parents were charged.", 
-                "state": "Oklahoma", 
-                "date": "1997-01", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -77.17109, 
-                    38.88233
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Falls Church", 
-                "description": "A Falls Church abortion clinic was set on fire causing an estimated $25,000 in damages. James Mitchell sentenced to 10 years.", 
-                "state": "Virginia", 
-                "date": "1997-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -110.56104, 
-                    45.66244
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Livingston", 
-                "description": "The roof of the Medical Arts Center where a doctor who performed abortions worked was set on fire. An anti-abortion activist was arrested.", 
-                "state": "Montana", 
-                "date": "1997-04-02", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -122.67621, 
-                    45.52345
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Portland", 
-                "description": "An arson occurred at All Women's Health Services. Damages were estimated to be $5,000.", 
-                "state": "Oregon", 
-                "date": "1997-05", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -87.56917, 
-                    33.20984
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Tuscaloosa", 
-                "description": "West Alabama Women's Center sustained $250,000 in damages, after a firebombing gutted the interior of the building", 
-                "state": "Alabama", 
-                "date": "1997-08", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -122.67621, 
-                    45.52345
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Portland", 
-                "description": "Lovejoy Surgicenter was set on fire and suffered $250,000 in damage, after receiving several bomb threats from 5/17-19.", 
-                "state": "Oregon", 
-                "date": "1997-10", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -117.39616, 
-                    33.95335
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Riverside", 
-                "description": "Planned Parenthood of San Diego and Riverside Counties was firebombed. A white RV was spotted leaving the scene", 
-                "state": "California", 
-                "date": "1998-03", 
-                "type": "ARSON", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
                     -78.87836, 
                     35.05266
                 ]
@@ -784,6 +1012,25 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
+                    -78.79976, 
+                    42.97839
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Amherst", 
+                "description": "Dr. Barnett Slepian, who performed abortions, was shot to death by a sniper in his western New York home.", 
+                "state": "New York", 
+                "date": "1998-10-23", 
+                "type": "SHOOTING", 
+                "killed": "1"
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
                     -87.90647, 
                     43.0389
                 ]
@@ -815,6 +1062,25 @@
                 "state": "South Dakota", 
                 "date": "1999-03", 
                 "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -82.55402, 
+                    35.60095
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Asheville", 
+                "description": "An explosive device went off outside Femcare clinic, but caused no injuries and little damage, as it only partially detonated.", 
+                "state": "North Carolina", 
+                "date": "1999-03", 
+                "type": "BOMB", 
                 "killed": ""
             }
         }, 
@@ -898,6 +1164,25 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
+                    -103.23101, 
+                    44.08054
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Rapid City", 
+                "description": "A Planned Parenthood clinic was damaged by an explosive device in the early morning hours. ", 
+                "state": "South Dakota", 
+                "date": "1999-10", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
                     -80.13199, 
                     26.17231
                 ]
@@ -936,6 +1221,25 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
+                    -89.094, 
+                    42.27113
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Rockford", 
+                "description": "A priest drove his car into a clinic, and then preceded to hit the building with an ax until the owner fired his gun twice to stop him.", 
+                "state": "Illinois", 
+                "date": "2000-09-30", 
+                "type": "OTHER", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
                     -85.58723, 
                     42.29171
                 ]
@@ -948,6 +1252,25 @@
                 "state": "Michigan", 
                 "date": "2001-01", 
                 "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -122.44429, 
+                    47.25288
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Tacoma", 
+                "description": "An explosive device went off at a medical clinic where a doctor occasionally performed abortions.", 
+                "state": "Washington", 
+                "date": "2001-06", 
+                "type": "BOMB", 
                 "killed": ""
             }
         }, 
@@ -1050,6 +1373,25 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
+                    -97.74306, 
+                    30.26715
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Austin", 
+                "description": "A bomb was left outside an Austin women's clinic that performs abortions.", 
+                "state": "Texas", 
+                "date": "2007-04-25", 
+                "type": "BOMB", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
                     -75.97799, 
                     36.85293
                 ]
@@ -1082,6 +1424,44 @@
                 "date": "2007-12-05", 
                 "type": "ARSON", 
                 "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -93.1040002804403, 
+                    44.9477528153286
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "St. Paul", 
+                "description": "The man accused of driving into the entrance of the Planned Parenthood clinic in St. Paul told police that Jesus told him to do it.", 
+                "state": "Minnesota", 
+                "date": "2009-01-22", 
+                "type": "OTHER", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -97.33754, 
+                    37.69224
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Wichita", 
+                "description": "Dr. George Tiller  was killed outside of his church. Tiller had been shot before by an anti-abortion extremist in 1993.", 
+                "state": "Kansas", 
+                "date": "2009-05-31", 
+                "type": "SHOOTING", 
+                "killed": "1"
             }
         }, 
         {
@@ -1221,6 +1601,44 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
+                    -86.52639, 
+                    39.16533
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Bloomington", 
+                "description": "A man took an ax to a Planned Parenthood clinic in Bloomington, Indiana, and then vandalized it with red paint. No one was injured.", 
+                "state": "Indiana", 
+                "date": "2013-04-11", 
+                "type": "OTHER", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -114.31291, 
+                    48.19579
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Kalispell", 
+                "description": "All Families Healthcare, the only facility in the area to provide abortions, was ransacked. The clinic owner closed her business after.", 
+                "state": "Montana", 
+                "date": "2014-03-03", 
+                "type": "OTHER", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
                     -88.32007, 
                     41.76058
                 ]
@@ -1233,6 +1651,25 @@
                 "state": "Illinois", 
                 "date": "2015-07-19", 
                 "type": "ARSON", 
+                "killed": ""
+            }
+        }, 
+        {
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -90.15285, 
+                    29.98409
+                ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+                "injured": "", 
+                "city": "Metairie", 
+                "description": "A man accused of removing signs at a clinic in Metairie, Louisiana, was charged with committing a hate crime.", 
+                "state": "Louisiana", 
+                "date": "2015-08", 
+                "type": "OTHER", 
                 "killed": ""
             }
         }, 
@@ -1297,367 +1734,6 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
-                    -117.42908, 
-                    47.65966
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Spokane", 
-                "description": "Four people were convicted of conspiring in the bombing of the clinic and a bank robbery.", 
-                "state": "Washington", 
-                "date": "1996-07", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -117.42908, 
-                    47.65966
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Spokane", 
-                "description": "Three white separatists were convicted for multiple bombings and bank robberies in the Spokane area, including a Planned Parenthood.", 
-                "state": "Washington", 
-                "date": "1996-07-12", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -95.99277, 
-                    36.15398
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Tulsa", 
-                "description": "Two separate bomb incidents at the Reproductive Services and Adoption Affiliates clinic. A teenager was convicted in the bombing and his parents were charged.", 
-                "state": "Oklahoma", 
-                "date": "1997-01", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -84.38798, 
-                    33.749
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "7", 
-                "city": "Atlanta", 
-                "description": "A bomb destroyed most of the clinic. The second bomb was designed to kill rescue, law enforcement, and clinic staff. 7 injured.", 
-                "state": "Georgia", 
-                "date": "1997-01", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -118.37897, 
-                    34.17223
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "North Hollywood", 
-                "description": "A \u201cMolotov Cocktail\u201d was thrown through a window at the Family Planning Assoc. Medical Group causing $1,000 in damage.", 
-                "state": "California", 
-                "date": "1997-03", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -111.03856, 
-                    45.67965
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Bozeman", 
-                "description": "An anti-abortion activist was arrested for setting fire to the building housing the office of Dr. Susan Wicklund.", 
-                "state": "Montana", 
-                "date": "1997-03", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -79.79198, 
-                    36.07264
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Greensboro", 
-                "description": "The Piedmont-Carolina Medical clinic was set on fire causing $50,000 in damage.", 
-                "state": "North Carolina", 
-                "date": "1997-03", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -119.01871, 
-                    35.37329
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Bakersfield", 
-                "description": "A pick-up truck loaded with 13 gas cans and 3 propane tanks was rammed into the clinic, then set on fire. ", 
-                "state": "California", 
-                "date": "1997-03", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -86.80249, 
-                    33.52066
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "1", 
-                "city": "Birmingham", 
-                "description": "A police officer was killed and a nurse was severely injured. Eric Rudolph, who also set off bombs in Atlanta, admitted responsibility.", 
-                "state": "Alabama", 
-                "date": "1998-01-29", 
-                "type": "BOMB", 
-                "killed": "1"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -86.80249, 
-                    33.52066
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Birmingham", 
-                "description": "Eric Rudolph killed a security guard at an abortion clinic. He was also responsible for detonating bombs in Atlanta.", 
-                "state": "Alabama", 
-                "date": "1998-01-29", 
-                "type": "BOMB", 
-                "killed": "1"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -82.55402, 
-                    35.60095
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Asheville", 
-                "description": "An explosive device went off outside Femcare clinic, but caused no injuries and little damage, as it only partially detonated.", 
-                "state": "North Carolina", 
-                "date": "1999-03", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -103.23101, 
-                    44.08054
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Rapid City", 
-                "description": "A Planned Parenthood clinic was damaged by an explosive device in the early morning hours. ", 
-                "state": "South Dakota", 
-                "date": "1999-10", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -122.44429, 
-                    47.25288
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Tacoma", 
-                "description": "An explosive device went off at a medical clinic where a doctor occasionally performed abortions.", 
-                "state": "Washington", 
-                "date": "2001-06", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -97.74306, 
-                    30.26715
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Austin", 
-                "description": "A bomb was left outside an Austin women's clinic that performs abortions.", 
-                "state": "Texas", 
-                "date": "2007-04-25", 
-                "type": "BOMB", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -89.094, 
-                    42.27113
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Rockford", 
-                "description": "A priest drove his car into a clinic, and then preceded to hit the building with an ax until the owner fired his gun twice to stop him.", 
-                "state": "Illinois", 
-                "date": "2000-09-30", 
-                "type": "OTHER", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -93.1040002804403, 
-                    44.9477528153286
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "St. Paul", 
-                "description": "The man accused of driving into the entrance of the Planned Parenthood clinic in St. Paul told police that Jesus told him to do it.", 
-                "state": "Minnesota", 
-                "date": "2009-01-22", 
-                "type": "OTHER", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -86.52639, 
-                    39.16533
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Bloomington", 
-                "description": "A man took an ax to a Planned Parenthood clinic in Bloomington, Indiana, and then vandalized it with red paint. No one was injured.", 
-                "state": "Indiana", 
-                "date": "2013-04-11", 
-                "type": "OTHER", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -114.31291, 
-                    48.19579
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Kalispell", 
-                "description": "All Families Healthcare, the only facility in the area to provide abortions, was ransacked. The clinic owner closed her business after.", 
-                "state": "Montana", 
-                "date": "2014-03-03", 
-                "type": "OTHER", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -90.15285, 
-                    29.98409
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Metairie", 
-                "description": "A man accused of removing signs at a clinic in Metairie, Louisiana, was charged with committing a hate crime.", 
-                "state": "Louisiana", 
-                "date": "2015-08", 
-                "type": "OTHER", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
                     -72.34676, 
                     43.37674
                 ]
@@ -1677,120 +1753,6 @@
             "geometry": {
                 "type": "Point", 
                 "coordinates": [
-                    -87.21691, 
-                    30.42131
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Pensacola", 
-                "description": "Dr. David Gunn was fatally shot during a protest. He had been the subject of wanted-style posters distributed by Operation Rescue.", 
-                "state": "Florida", 
-                "date": "1993-03-10", 
-                "type": "SHOOTING", 
-                "killed": "1"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -87.21691, 
-                    30.42131
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Pensacola", 
-                "description": "Dr. John Britton and James Barrett, a clinic escort, were both shot to death outside a clinic.", 
-                "state": "Florida", 
-                "date": "1994-06-29", 
-                "type": "SHOOTING", 
-                "killed": "2"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -71.12116, 
-                    42.33176
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "5", 
-                "city": "Brookline", 
-                "description": "Shannon Lowney and Lee Ann Nichols were killed and five others were wounded in two clinic attacks.", 
-                "state": "Massachusetts", 
-                "date": "1994-12-30", 
-                "type": "SHOOTING", 
-                "killed": "2"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -77.61556, 
-                    43.15478
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Rochester", 
-                "description": "A sniper shot at Dr. David Gandell's residence in Rochester, New York. Gandell is a well-known abortion provider.", 
-                "state": "New York", 
-                "date": "1997-10-28", 
-                "type": "SHOOTING", 
-                "killed": ""
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -78.79976, 
-                    42.97839
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Amherst", 
-                "description": "Dr. Barnett Slepian, who performed abortions, was shot to death by a sniper in his western New York home.", 
-                "state": "New York", 
-                "date": "1998-10-23", 
-                "type": "SHOOTING", 
-                "killed": "1"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -97.33754, 
-                    37.69224
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "", 
-                "city": "Wichita", 
-                "description": "Dr. George Tiller  was killed outside of his church. Tiller had been shot before by an anti-abortion extremist in 1993.", 
-                "state": "Kansas", 
-                "date": "2009-05-31", 
-                "type": "SHOOTING", 
-                "killed": "1"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
                     -104.82136, 
                     38.83388
                 ]
@@ -1804,25 +1766,6 @@
                 "date": "2015-11-28", 
                 "type": "SHOOTING", 
                 "killed": "3"
-            }
-        }, 
-        {
-            "geometry": {
-                "type": "Point", 
-                "coordinates": [
-                    -90.07507, 
-                    29.95465
-                ]
-            }, 
-            "type": "Feature", 
-            "properties": {
-                "injured": "1", 
-                "city": "New Orleans", 
-                "description": "Dr. Calvin Jackson was stabbed 15 times, losing 14 pints of blood, outside the Orleans Womens Clinic. The man served no jail time.", 
-                "state": "Louisiana", 
-                "date": "1996-12-18", 
-                "type": "STABBING", 
-                "killed": ""
             }
         }
     ]
