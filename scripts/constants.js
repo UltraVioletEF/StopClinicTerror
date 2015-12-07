@@ -1,4 +1,6 @@
-states_hash =
+// globals, deal with it
+
+stateAbbrs =
   {
     'Alabama': 'AL',
     'Alaska': 'AK',
@@ -59,4 +61,9 @@ states_hash =
     'West Virginia': 'WV',
     'Wisconsin': 'WI',
     'Wyoming': 'WY'
-  }
+  };
+
+monthNames = ['January', 'February', 'March', 'April',
+              'May', 'June', 'July', 'August', 'September',
+              'October', 'November', 'December'];
+

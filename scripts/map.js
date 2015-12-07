@@ -7,9 +7,6 @@ var map = (function () {
         animating, // is the animation currently playing?
         cachedData;
 
-    // month name lookups
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
     var duration = 500; // event display time in ms, 500 means total animation takes ~50 seconds
 
     var drawMap = function() {
@@ -129,7 +126,7 @@ var map = (function () {
 
     var updateData = function(d) {
         d.properties.location = getLocation(d);
-        d.properties.date_string = getDate(d);
+        d.properties.date_string = getDateString(d);
         var text = dataDescription(d.properties);
         $('#data .description').html(text).addClass('show');
     };
@@ -144,15 +141,28 @@ var map = (function () {
         updateData(d);
     };
 
-    var getDate = function(d) {
+    var getDate = function(string) {
+        // turn "YYYY-MM(-DD)" into javascript Date
+        var parts = string.split('-');
+        if (parts.length == 1) {
+            return new Date(parts[0]); // YYYY
+        } else {
+             // NB, months are 0-based
+            if (parts.length == 2) { return new Date(parts[0], parts[1]-1); } // YYYY-MM
+            if (parts.length == 3) { return new Date(parts[0], parts[1]-1, parts[2]); } // YYYY-MM-DD
+        }
+        return null;
+    };
+
+    var getDateString = function(d) {
         // turn "YYYY-MM(-DD)" into "Month Day Year"
         if (d.properties.date) {
             var parts = d.properties.date.split('-');
             if (parts.length == 1) { return parts[0]; } // year
             else {
                 var monthIndex = parseInt(parts[1]) - 1;
-                if (parts.length == 2) { return months[monthIndex] + " " + parts[0]; } // month year
-                if (parts.length == 3) { return months[monthIndex] + " " + parts[2] + ", " + parts[0];} // month day, year
+                if (parts.length == 2) { return monthNames[monthIndex] + " " + parts[0]; } // month year
+                if (parts.length == 3) { return monthNames[monthIndex] + " " + parts[2] + ", " + parts[0];} // month day, year
             }
         }
     };
@@ -160,7 +170,7 @@ var map = (function () {
     var getLocation = function(d) {
         var location;
         if (d.properties.city && d.properties.state) {
-            var state_abbr = states_hash[d.properties.state];
+            var state_abbr = stateAbbrs[d.properties.state];
             location = d.properties.city;
             if (state_abbr) {
                 location += ', ' + state_abbr;
@@ -176,38 +186,39 @@ var map = (function () {
         d3.selectAll('g.bubble').classed('animating', animating);
 
         var data = cachedData;
+        var firstDate = getDate(data[0].properties.date);
+        var lastDate = getDate(data[data.length - 1].properties.date);
 
-        var firstDate = new Date(data[0].properties.date);
-        var lastDate = new Date(data[data.length - 1].properties.date);
-        var years = d3.time.years(firstDate, lastDate, 1); // year boundary dates
+        // group attacks by year
+        var grouped = d3.nest()
+            .key(function(d) { return (getDate(d.properties.date)).getUTCFullYear(); })
+            .map(data);
+
+        // years in which we have data
+        var years = d3.keys(grouped);
 
         var y = 0;
         var i = 0;
 
-        // group attacks by year
-        var grouped = d3.nest()
-            .key(function(d) { return (new Date(d.properties.date)).getUTCFullYear(); })
-            .map(data);
-
         // add first year to playback
-        $('.playback').prepend(dataYear({year: years[y].getUTCFullYear()}));
+        $('.playback').prepend(dataYear({year: years[y]}));
         $('.playback li.year:first').addClass('show');
 
         timer = setInterval(function() {
-            var year = years[y].getUTCFullYear(); // eg, 1995
+            var year = years[y]; // eg, "1995"
             var eventsInYear = grouped[year] || []; // list of events and properties
 
             // get the event for this interval    
             var e = eventsInYear[i];
 
             if (e) {
-                var eventDate = (new Date(e.properties.date));
+                var eventDate = (getDate(e.properties.date));
 
                 // filter for other attacks in month and city
                 var attacks = d3.selectAll('circle')
                     .filter(function(d) {
-                        var date = new Date(d.properties.date);
-                        return ((date.getUTCFullYear() === year) &&
+                        var date = getDate(d.properties.date);
+                        return ((date.getUTCFullYear() === parseInt(year)) &&
                                 (date.getUTCMonth() === eventDate.getUTCMonth()) &&
                                 (d.properties.city === e.properties.city)
                             );
@@ -268,7 +279,7 @@ var map = (function () {
                 y = y+1;
                 i = 0;
 
-                var nextYear = years[y].getUTCFullYear();
+                var nextYear = years[y];
                 if (grouped[nextYear] && grouped[nextYear].length > 0) {
                     $('.playback').prepend(dataYear({year: nextYear}));
                     $('.playback li.year:first').addClass('show');
