@@ -58,7 +58,7 @@ var map = (function () {
               .classed('border', true);
         });
 
-        d3.json("data/7c7cdb75.attacks.json", function(error, attacks) {
+        d3.json("data/7ba8495d.attacks.json", function(error, attacks) {
             if (error) return console.error(error);
 
             var data = _.sortBy(attacks.features,
