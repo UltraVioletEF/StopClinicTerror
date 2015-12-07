@@ -74,12 +74,16 @@ $bp-tablet-only: "min-width: 480px) and (max-width: 800px";
 
       .about {
         // location and date on same line
-        .location,
-        .date {
+        .location {
           display: inline-block;
           float: left;
           font-size: 1.5em;
-          margin-right: 20px;
+        }
+        .date {
+          display: inline-block;
+          float: right;
+          font-size: 1.5em;
+          margin-left: 20px;
         }
       }
     }
