@@ -23,5 +23,9 @@ Open a browser to localhost:4000 and it will reflect changes made to html, style
 
 ## Deployment
 ```
+grunt build
 grunt buildcontrol:ghpages
 ```
+
+Built with grunt to compile styles, minify and combine scripts, and increment static file versions. Deploy to github pages with buildcontrol.
+ 
