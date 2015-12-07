@@ -79,7 +79,7 @@ var map = (function () {
                     $('#data .description').empty();
                     $('.playback').empty();
                     d3.selectAll('circle')
-                        .classed('hidden', true);
+                        .style('opacity', 0);
 
                     // restart animation
                     startAnimation(cachedData);
