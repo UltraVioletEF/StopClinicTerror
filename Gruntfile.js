@@ -89,7 +89,8 @@ module.exports = function (grunt) {
                         '<%= config.site %>/scripts/{,*/}*.js',
                         '<%= config.site %>/styles/{,*/}*.css',
                         '<%= config.site %>/images/{,*/}*.{png,jpg,jpeg,gif,svg}',
-                        '!<%= config.site %>/styles/fonts/{,*/}*.*' //exclude fonts
+                        '!<%= config.site %>/styles/fonts/{,*/}*.*', //exclude fonts
+                        '!<%= config.site %>/images/share.png' // and FB share image
                     ]
                 }
             }
