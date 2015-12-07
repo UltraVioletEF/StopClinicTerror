@@ -6,7 +6,7 @@ A visualization of terrorist attacks on womens health clinics in the US from 199
 * Map design &copy; 2015 [UltraViolet](http://weareultraviolet.org)
 
 ### Data
-Events are stored in a [google spreadsheet](https://docs.google.com/spreadsheets/d/1g8oETfpKJVg1CFt5zSIS0vZdOt2lO0F6Fr8HCi84riw/edit#gid=0&vpid=A1) for collaborative editing.
+Events are stored in a [google spreadsheet](https://docs.google.com/spreadsheets/d/1g8oETfpKJVg1CFt5zSIS0vZdOt2lO0F6Fr8HCi84riw/edit#gid=0&vpid=A1) for collaborative editing.
 
 To download and convert to geojson: `cd data && make`
 
