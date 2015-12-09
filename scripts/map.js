@@ -81,6 +81,8 @@ var map = (function () {
                     d3.selectAll('circle')
                         .style('opacity', 0);
 
+                    ga('send', 'event', 'animation', 'restart');
+
                     // restart animation
                     startAnimation(cachedData);
                 });
@@ -139,6 +141,8 @@ var map = (function () {
         d3.selectAll('circle.active')
             .classed('active', false);
         updateData(d);
+
+        ga('send', 'event', 'map', 'hover', getLocation(d));
     };
 
     var getDate = function(string) {
@@ -269,6 +273,8 @@ var map = (function () {
 
                 // show restart button
                 $('button.restart').addClass('show');
+
+                ga('send', 'event', 'animation', 'complete');
                 
                 return true;
             }

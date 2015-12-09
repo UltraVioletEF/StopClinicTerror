@@ -86,7 +86,10 @@
 <script>
 $(document).ready(function() {
     map.draw();
-    setTimeout(map.start, 2000);
+    setTimeout(function() {
+        map.start();
+        ga('send', 'event', 'animation', 'start');
+      }, 2000);
 
     $('input').on('focusout', function(e) {
       $(e.target).removeClass('error');
