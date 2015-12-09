@@ -128,7 +128,7 @@ $(document).ready(function() {
 });
 
 onWidgetSuccess = function(form, serverResponse) {
-  ga('send', 'signup');
+  ga('send', 'event', 'petition', 'signup');
   return true;
 };
 
@@ -139,6 +139,7 @@ onWidgetError = function(form, serverResponse) {
       .addClass('error')
       .attr('placeholder', msg);
   }
+  ga('send', 'event', 'petition', 'error');
   return false;
 };
 
