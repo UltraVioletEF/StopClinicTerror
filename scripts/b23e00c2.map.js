@@ -46,17 +46,16 @@ var map = (function () {
         setMapSize();
         $(window).resize(setMapSize);
 
-        d3.json("data/96a4c04b.us-states.json", function(error, us) {
-          if (error) return console.error(error);
-          
-          self.map.append("path")
+        queue()
+          .defer(d3.json, "data/96a4c04b.us-states.json")
+          .defer(d3.json, "data/7ba8495d.attacks.json")
+          .await(function(error, us, attacks) {
+            if(error) { console.error(error); }
+
+            self.map.append("path")
               .datum(us)
               .attr("d", self.path)
               .classed('border', true);
-        });
-
-        d3.json("data/7ba8495d.attacks.json", function(error, attacks) {
-            if (error) return console.error(error);
 
             var data = _.sortBy(attacks.features,
                 function(d) { return (d.properties.date); }
