@@ -47,6 +47,13 @@ a {
   &:hover { color: $link-hover-color; }
 }
 
+.warning {
+  background: $purple;
+  font-size: 2rem;
+  padding: 20px 40px;
+  text-align: center;
+  a { color: $teal; }
+}
 
 footer {
   clear: left;
