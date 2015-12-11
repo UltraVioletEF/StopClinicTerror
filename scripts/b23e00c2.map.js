@@ -48,7 +48,7 @@ var map = (function () {
 
         queue()
           .defer(d3.json, "data/96a4c04b.us-states.json")
-          .defer(d3.json, "data/7ba8495d.attacks.json")
+          .defer(d3.json, "data/09ec8644.attacks.json")
           .await(function(error, us, attacks) {
             if(error) { console.error(error); }
 
