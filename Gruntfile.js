@@ -104,7 +104,7 @@ module.exports = function (grunt) {
             },
             ghpages: {
               options: {
-                remote: 'git@github.com:spacedogXYZ/StopClinicTerror.git',
+                remote: 'git@github.com:UltraVioletEF/StopClinicTerror.git',
                 branch: 'gh-pages',
               }
             },
